@@ -1,18 +1,37 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App";
+import ComicCard from "./components/ComicCard";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div>
+        <Header />
+        <div className="row">
+        <Login />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="row">
+          <div className="col s8 m8 l8">
+            <ComicCard />
+          </div>
+          <div className="col s2 m2 l2">
+            <Card />
+            <Card />
+
+          </div>
+          <div className="col s2 m2 l2">
+            <Card />
+            <Card />
+
+          </div>
+
+
+        </div>
+        <Footer />
       </div>
     );
   }
