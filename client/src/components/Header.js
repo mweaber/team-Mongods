@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     render() {
@@ -6,9 +7,9 @@ class Header extends Component {
             <div>
                 <nav>
                     <div className="nav-wrapper grey dark-5">
-                        <a href="#" className="brand-logo">&nbsp;Harambooks Mockup</a>
+                       <a href="" className="brand-logo">&nbsp;Harambooks Mockup</a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a href="">Welcome User</a></li>
+                            <li><a href="">Welcome User</a>></li>
                             <li><a href="">Shit</a></li>
                             <li><a href="">Saved</a></li>
                             <li><a href="">Logout</a></li>
