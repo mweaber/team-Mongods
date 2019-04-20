@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Saved from "./components/Saved";
 import Shop from "./components/Shop";
+import ErrorPage from "./components/ErrorPage";
 
 
 
@@ -16,12 +17,13 @@ class App extends Component {
         <Header/>
 
         <div>
-
-          <Route exact path= "/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/saved" component={Saved} />
-          <Route exact path="/shop" component={Shop} />
-
+          <Switch>
+            <Route exact path= "/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/saved" component={Saved} />
+            <Route exact path="/shop" component={Shop} />
+            <Route component = {ErrorPage} />
+          </Switch>
         </div>
         
       </Router>
