@@ -4,7 +4,7 @@ import "./App.css";
 import ComicCard from "./components/ComicCard";
 import Card from "./components/Card";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import Temp from "./placeholder.json";
 
@@ -71,4 +71,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App;      
+
+
