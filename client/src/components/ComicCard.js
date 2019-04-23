@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Harambe from "../images/harambe.jpg";
 
 // import "./App.css";
 
@@ -13,7 +14,7 @@ class ComicCard extends Component {
             
                        <div className="card">
                             <div className="card-image">
-                                <img src="./images/harambe.jpg" />
+                                <img src={Harambe} />
                                 <span className="card-title">He is risen</span>
                                 <a className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a>
                             </div>
