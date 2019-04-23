@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 // import Background from "./pencilbkgrnd.jpg";
 import ComicCard from "./components/ComicCard";
@@ -7,6 +8,9 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Temp from "./placeholder.json";
+import Saved from "./components/Saved";
+import Shop from "./components/Shop";
+import ErrorPage from "./components/ErrorPage";
 
 // var sectionStyle = {
 //   width: "100%",
