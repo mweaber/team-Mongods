@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import WallBackGround from "../wallbackground.jpg"
 import ComicCard from "./ComicCard";
 import Card from "./Card"
 import InputForm from "./InputForm"
@@ -17,10 +17,13 @@ class Home extends Component {
         }
     }
 
+
+
+
     render() {
         return (
             <div>
-                <div className="row">
+                <div className="row" style={{backgroundImage: "url(" + { WallBackGround } + ")"}}>
                 </div>
                 <div className="row">
                     <div className="col s8 m8 l8">

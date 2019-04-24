@@ -10,17 +10,12 @@ class Header extends Component {
                     <Link to ="/"><a href="" className="brand-logo">&nbsp;Harambooks Mockup</a></Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
-
-     
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li><Link to = "/login"><a href="">Welcome User</a></Link></li>
                             <li><Link to = "/shop"><a href="">Shop</a></Link></li>
                             <li><Link to = "/saved"><a href="">Saved</a></Link></li>
                             <li><a href="">Logout</a></li>
                         </ul>
- 
-                       
-
                     </div>
                 </nav>
                 <ul className="sidenav" id="mobile-demo">
