@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import API from "../util/API";
+
+
+
 
 
 class Shop extends Component {
@@ -9,6 +13,8 @@ class Shop extends Component {
                 <p>I would also like to add in a yelp/google maps type section to find local shops.</p> 
  
             </div>
+
+
         );
     }
 }
