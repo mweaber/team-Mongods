@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import InputForm from "./InputForm"
+
+import API from "../util/API";
+
 
 class Shop extends Component {
     render() {
@@ -11,6 +13,8 @@ class Shop extends Component {
                         <InputForm />
                     </div>
             </div>
+
+
         );
     }
 }
