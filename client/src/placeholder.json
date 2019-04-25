@@ -13,6 +13,11 @@
         "id": 3,
         "name": "Detective Comics 1000",
         "image": "./images/detective1kMidtown.jpg"
+    },
+    {
+        "id": 4,
+        "name": "DCEASED 1",
+        "image": "./images/dceased1.jpg"
     }
 ]
 
