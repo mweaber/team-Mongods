@@ -9,7 +9,7 @@ class Card extends Component {
     render() {
         return (
             <div>
-         
+
                     <div className="col s6">
                         <div className="card" >
                             <div className="card-image">

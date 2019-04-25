@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import WallBackGround from "../wallbackground.jpg"
+import Background from "../images/automobile-automotive-batman-255497.jpg"
 import ComicCard from "./ComicCard";
 import Card from "./Card"
 import InputForm from "./InputForm"
 import Temp from "../placeholder.json"
 
+
 import Footer from "./Footer"
+
+const sectionStyle = {
+    backgroundImage: `url(${Background})`
+}
+
+
 
 class Home extends Component {
 
@@ -17,16 +24,13 @@ class Home extends Component {
         }
     }
 
-
-
-
     render() {
         return (
-            <div>
-                <div className="row" style={{backgroundImage: "url(" + { WallBackGround } + ")"}}>
+            <div style={ sectionStyle }>
+                <div className="row" style={ sectionStyle }>
                 </div>
                 <div className="row">
-                    <div className="col s8 m8 l8">
+                    <div className="col s6 m6 l6">
                         <ComicCard />
                     </div>
                     <div className="col s4">
