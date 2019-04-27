@@ -1,15 +1,20 @@
-// const axios = require("axios");
-const eBay = require("ebay-node-api");
+const Ebay = require("ebay-node-api");
 
-let eBay = new Ebay({
-    clientID: "PRD-ea920fd0f16d-5c91-41ea-94ea-ceae",
+let ebay = new Ebay({
+    clientID: "MatthewW-teamMong-PRD-bea920fd0-d55acc84",
     limit: 6
 });
 
-eBay.findItemsByKeywords("iphone").then((data) => {
-    console.log(data); // fetches top 6 results in form of JSON.
+ebay.findItemsByKeywords("iphone").then((result) => {
+    const useable = result[0]
+    console.log(useable.searchResult[0].item);
+    useable.searchResult[0].item.forEach(one => {
+        console.log(one.title)
+        console.log(one.location)
+        console.log(one.galleryURL)
+        console.log(one.viewItemURL)
+    })
+
 }, (error) => {
     console.log(error);
 });
-
-
