@@ -7,14 +7,14 @@ class Header extends Component {
             <div>
                 <nav>
                     <div className="nav-wrapper  indigo dark-4">
-                    <Link to ="/"><a href="" className="brand-logo">&nbsp;Harambooks Mockup</a></Link>
+                    <Link to ="/"><a href="" className="brand-logo">&nbsp;Comics and things</a></Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
                         <ul className="right hide-on-small-and-down">
                             <li><Link to = "/login">Welcome User</Link></li>
                             <li><Link to = "/shop">Shop</Link></li>
-                            <li><Link to = "/saved">>Saved</Link></li>
-                            <li><Link to ="/logout">Logout</Link></li>
+                            <li><Link to = "/saved">Saved</Link></li>
+
                         </ul>
                     </div>
                 </nav>
@@ -22,7 +22,6 @@ class Header extends Component {
                             <li><Link to = "/login">Welcome User</Link></li>
                             <li><Link to = "/shop">>Shop</Link></li>
                             <li><Link to = "/saved">>Saved</Link></li>
-                            <li><Link to ="/logout">>Logout</Link></li>
                 </ul>
             </div>
 
