@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Harambe from "../images/harambe.jpg";
+import SideCover from "../images/sideCovers.jpg";
 import InputForm from "./InputForm"
 // import "../materialize.js"
 
@@ -31,19 +31,19 @@ class ComicCard extends Component {
     render() {
         return (
             <div>
-                <div className="box" style={ boxStyle }>
+                {/* <div className="box" style={ boxStyle }>
                         <InputForm  />
-                </div>
-                {/* <div className="card">
+                </div> */}
+                <div className="card">
                     <div className="card-image">
-                        <img src={Harambe} />
-                        <span className="card-title">Replace with input Section?</span>
+                        <img src={SideCover} />
+                        <span className="card-title black-text z-depth-1">Replace with input Section?</span>
                         <a href="#" className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a>
                     </div>
                     <div className="card-content">
-                        <p>Where is my inputs</p>
+                        <p>Login Inpu Removed - Oauth</p>
                     </div>
-                </div> */}
+                </div>
 
 
             </div>
