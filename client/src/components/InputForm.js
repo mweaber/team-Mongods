@@ -1,15 +1,10 @@
 import React, { Component } from "react";
+import App from "../App";
 
-
-
-
-class Login extends Component {
+class InputForm extends Component {
     render() {
-        return(
+        return (
             <div>
-                <h5>Here is some example text of where a user will come to login/signup</h5>
-                <p>This shit better work.</p>
-
                 <div className="row">
                     <form className="col s12">
 
@@ -47,12 +42,11 @@ class Login extends Component {
                         </div>
                     </form>
 
-                </div>        
+                </div>
             </div>
-        );
+
+
+        )
     }
 }
-
-
-
-export default Login;
+export default InputForm;

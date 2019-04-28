@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Hulk 181",
+        "image": "./images/hulk181.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Spiderman First App",
+        "image": "./images/Amazing-Fantasy-15.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Detective Comics 1000",
+        "image": "./images/detective1kMidtown.jpg"
+    },
+    {
+        "id": 4,
+        "name": "DCEASED 1",
+        "image": "./images/dceased1.jpg"
+    }
+]
+
