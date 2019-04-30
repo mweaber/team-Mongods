@@ -18,4 +18,4 @@ ebay.findItemsByKeywords("iphone").then((result) => {
 
 }, (error) => {
     console.log(error);
-
+})
