@@ -7,8 +7,8 @@ class Login extends Component {
     render() {
         return(
             <div>
-                <h5>Here is some example text of where a user will come to login/signup</h5>
-                <p>This shit better work.</p>
+                {/* <h5>Here is some example text of where a user will come to login/signup</h5>
+                <p>This shit better work.</p> */}
 
                 <div className="row">
                     <form className="col s12">
