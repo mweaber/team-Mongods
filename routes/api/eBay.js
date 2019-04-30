@@ -8,10 +8,6 @@ router
 
 module.exports = router;
 
-
-
-
-
 // Matches with the /saved
 router.get("/", (req, res) => {
     res.json({
