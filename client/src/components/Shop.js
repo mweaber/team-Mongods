@@ -5,25 +5,35 @@ import API from "../util/API";
 
 class Shop extends Component {
     state = {
-        query: ""
+        search: "test",
+        result: []
     };
  
-   componentDidMount() {
-    API.findItemsByKeywords().then(test => {
-        console.log(test);
-    })
-   };
+//    componentDidMount() {
+//     API.findItemsByKeywords().then(test => {
+//         console.log(test);
+//     })
+//    };
 
    handleInputChange = e => {
+    //    console.log(e.target);
        const {name, value} = e.target;
        this.setState({
            [name]: value
        });
+    //    console.log(this.state);
    };
 
    handleFormSubmit = e => {
        e.preventDefault();
-       API.findItemsByKeywords(this.state.search);
+    //    console.log(this.state.search);
+       API.findItemsByKeywords(this.state.search).then( (result) =>  {
+            this.setState({
+                result:result
+            })
+       }).catch( (err) => {
+           console.log(err);
+       })
    };
 
     render() {
@@ -32,13 +42,8 @@ class Shop extends Component {
                 <h5>Here will be a api call to eBay to search for comics to buy</h5>
             
                 <div className="col s12">
-                    <SearchBar 
-                        // query={this.state.query}
-                        value = {this.state.search}
-                        onChange={this.handleInputChange}
-                        name="search"
-                        placeholder = "Whatchu lookin' fer?"
-                    />
+                    <SearchBar search ={this.state.search} handleInputChange ={this.handleInputChange}
+                    handleFormSubmit = {this.handleFormSubmit}/>
                 </div>
 
                 <div className="col s12">

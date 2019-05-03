@@ -7,14 +7,12 @@ let ebay = new Ebay({
 });
 
 // Matches with the /saved
-router.get("/search", (req, res) => {
+router.get("/search/:query", (req, res) => {
 
-    ebay.findItemsByKeywords("iphone").then((result) => {
+    // console.log(req.params.query);
+
+    ebay.findItemsByKeywords(req.params.query).then((result) => {
         const useable = result[0]
-
-        
-        // Need to change req to handle the query
-
 
         // console.log(useable.searchResult[0].item);
         // useable.searchResult[0].item[0].forEach(one => {
@@ -23,14 +21,17 @@ router.get("/search", (req, res) => {
         // //   console.log(one.galleryURL);
         // //   console.log(one.viewItemURL);
         // });
-        console.log(useable.searchResult[0].item[0].title);
+        // console.log(useable.searchResult[0].item);
 
-        res.json({
-            title: useable.searchResult[0].item[0].title,
-            location: useable.searchResult[0].item[0].location,
-            gallery: useable.searchResult[0].item[0].galleryURL,
-            view: useable.searchResult[0].item[0].viewItemURL
-        })
+        eBayResult = useable.searchResult[0].item;
+
+        res.json(
+            // title: useable.searchResult[0].item[0].title,
+            // location: useable.searchResult[0].item[0].location,
+            // gallery: useable.searchResult[0].item[0].galleryURL,
+            // view: useable.searchResult[0].item[0].viewItemURL
+            eBayResult
+        )
     }).catch((error) => {
         console.log(error);
     });
