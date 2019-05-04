@@ -45,6 +45,7 @@ class App extends Component {
 
   componentDidMount() {
     //// all the necessary everything right here
+    
   }
   responseGoogle = (res) => {
     console.log(res)
