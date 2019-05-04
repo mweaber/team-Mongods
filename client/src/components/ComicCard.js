@@ -34,14 +34,16 @@ class ComicCard extends Component {
                 {/* <div className="box" style={ boxStyle }>
                         <InputForm  />
                 </div> */}
-                <div className="card">
-                    <div className="card-image">
-                        <img src={SideCover} />
-                        <span className="card-title black-text z-depth-1">Replace with input Section?</span>
-                        <a href="#" className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a>
-                    </div>
-                    <div className="card-content">
-                        <p>Login Inpu Removed - Oauth</p>
+                <div className=" col offset-s3">
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={SideCover} />
+                            <span className="card-title black-text z-depth-1">Replace with input Section?</span>
+                            <a href="#" className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a>
+                        </div>
+                        <div className="card-content">
+                            <p>Login Inpu Removed - Oauth</p>
+                        </div>
                     </div>
                 </div>
 

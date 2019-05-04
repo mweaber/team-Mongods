@@ -12,6 +12,7 @@ import Saved from "./components/Saved";
 import Shop from "./components/Shop";
 import ErrorPage from "./components/ErrorPage";
 import GoogleLogin from 'react-google-login';
+import Sidenav from "./components/sidenav/SideNav";
 
 const protected1 = () => (
   <h3>This is your homepage</h3>
@@ -20,13 +21,13 @@ const protected2 = () => (
   <h2>You are not logged in</h2>
 )
 
-const PrivateRoute = ({component: Component, user,...rest}) => {
+const PrivateRoute = ({ component: Component, user, ...rest }) => {
   return (
     <Route
-    {...rest}
-    render={(props) => user
-    ? <Component {...props} {...rest} user={user} />
-    : <Redirect to={{pathname: "/home", state: {from: props.location}}} />}
+      {...rest}
+      render={(props) => user
+        ? <Component {...props} {...rest} user={user} />
+        : <Redirect to={{ pathname: "/home", state: { from: props.location } }} />}
     />
   )
 }
@@ -37,66 +38,103 @@ class App extends Component {
     super(props);
     console.log(this.props)
     const id = localStorage.getItem("id");
-    this.state = { 
+    const email = localStorage.getItem("email");
+    const photo = localStorage.getItem("photo");
+    const userID = localStorage.getItem("userID");
+    console.log(id)
+    this.state = {
       loggedIn: id ? true : false,
+      email: email,
+      photo: photo,
+      userID: userID
+      
       // cards: Temp
     };
   }
 
-  componentDidMount() {
-    //// all the necessary everything right here
-  }
   responseGoogle = (res) => {
     console.log(res)
-    localStorage.setItem('id', res.googleID);
+
+    localStorage.setItem('id', res.googleId);
     this.setState({
-      loggedIn: true
+      loggedIn: true,
+      email: res.w3.U3,
+      userID: res.w3.ig,
+      photo: res.w3.Paa
     })
+    console.log(this.state.userID)
+    console.log(localStorage)
+    localStorage.setItem("email", this.state.email)
+    localStorage.setItem("userID", this.state.userID)
+    localStorage.setItem("photo", this.state.photo)
+    console.log(localStorage)
   }
+
+  componentDidMount() {
+  
+    }
+  
+  // testAuth = () => {
+  //   $.get('/api/test')
+  //   .then(res => {
+  //     this.setState({ 
+  //       isAuth: true,
+  //       email:  res.data.email,
+  //       userId: res.data.id
+  //     })
+  //   })
+  //   .catch(err => this.setState({
+  //       isAuth: false
+  //   }))
+
 
   logout = () => {
     localStorage.clear();
+    console.log("the logout button was clicked")
     this.setState({
-      loggedIn: false
+      loggedIn: false,
+      email: "",
+      userID: "",
+      photo: null
     })
   }
 
   render() {
     return (
       <Router>
-        <Header/>
+        {/* <Header/> */}
 
-          {this.state.loggedIn
-          ? <button style={{float: "right"}} onClick={this.logout}>Logout</button>
-          : <GoogleLogin 
-          clientId="76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com"
-          buttonText="Login with Google"
-          style={{float: "right"}}
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle} />
-        }
+        {/* {this.state.loggedIn
+          ? <button style={{ float: "right" }} onClick={this.logout}>Logout</button>
+          : <GoogleLogin
+            clientId="76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com"
+            buttonText="Login with Google"
+            style={{ float: "right" }}
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle} />
+        } */}
 
-          <Route exact path="/" component={Login} />
-          <PrivateRoute user={this.state.loggedIn} exact path="/home" component={Home} />
-          <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
-          <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
-          {/* <PrivateRoute user={this.state.loggedIn} exact path="/" component={Home} /> */}
-          {/* <PrivateRoute user={this.state.loggedIn} exact path="/login" component={Login} /> */}
+        <Route exact path="/" render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>} />
+        {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
+        <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
+        <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
+        {/* <PrivateRoute user={this.state.loggedIn} exact path="/" component={Home} /> */}
+        {/* <PrivateRoute user={this.state.loggedIn} exact path="/login" component={Login} /> */}
 
-          {/* <Switch>
+        {/* <Switch>
             <Route exact path= "/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/saved" component={Saved} />
             <Route exact path="/shop" component={Shop} />
             <Route component = {ErrorPage} />
           </Switch> */}
-        
+
 
       </Router>
     );
   }
 }
 
-export default App;      
+export default App;
 
 
