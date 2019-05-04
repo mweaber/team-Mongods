@@ -24,6 +24,17 @@ class Shop extends Component {
     //    console.log(this.state);
    };
 
+   handleResults() {
+       this.items = this.state.result.data;
+       this.items.forEach(one => {
+          console.log(one.title);
+          console.log(one.location);
+          console.log(one.galleryURL);
+          console.log(one.viewItemURL);
+        });
+   }
+      
+
    handleFormSubmit = e => {
        e.preventDefault();
     //    console.log(this.state.search);
@@ -39,7 +50,6 @@ class Shop extends Component {
     render() {
         return(
             <div>
-                <h5>Here will be a api call to eBay to search for comics to buy</h5>
             
                 <div className="col s12">
                     <SearchBar search ={this.state.search} handleInputChange ={this.handleInputChange}
@@ -47,7 +57,8 @@ class Shop extends Component {
                 </div>
 
                 <div className="col s12">
-
+                    {/* Lets add the results cards down here under the search. */}
+                    <p items = {this.handleResults}></p>
                 </div>
             </div>
         );
