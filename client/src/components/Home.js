@@ -65,7 +65,7 @@ class Home extends Component {
                         </ul>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
             </div>
         )

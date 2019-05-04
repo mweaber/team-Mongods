@@ -6,7 +6,7 @@
             return (
                 <div>
                     <div className="row">
-                        <form className="col s12">
+                        <form className="col s6 offset-s4">
                             <div className="input-field col s5">
                                 <input id="name" type="text" className="validate" 
                                         value = {this.props.search}
