@@ -52,6 +52,12 @@ class App extends Component {
     };
   }
 
+
+  componentDidMount() {
+
+    
+  }
+
   responseGoogle = (res) => {
     console.log(res)
 

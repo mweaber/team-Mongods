@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const EbayRoutes = require("../api/eBay");
+const eBayRoutes = require("../api/eBay");
 
-router.use("/shop", EbayRoutes);
+router.use("/shop", eBayRoutes);
 
 module.exports = router;
