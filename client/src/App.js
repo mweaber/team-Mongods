@@ -47,7 +47,7 @@ class App extends Component {
       email: email,
       photo: photo,
       userID: userID
-      
+
       // cards: Temp
     };
   }
@@ -55,7 +55,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    
+
   }
 
   responseGoogle = (res) => {
@@ -77,9 +77,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-  
-    }
-  
+
+  }
+
   // testAuth = () => {
   //   $.get('/api/test')
   //   .then(res => {
@@ -107,10 +107,17 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        {/* <Header/> */}
 
-        {/* {this.state.loggedIn
+      <Router>
+        {/* //// 
+        <Sidenav {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>}/>
+        
+        */}
+        <div>
+        <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>
+
+
+          {/* {this.state.loggedIn
           ? <button style={{ float: "right" }} onClick={this.logout}>Logout</button>
           : <GoogleLogin
             clientId="76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com"
@@ -120,10 +127,12 @@ class App extends Component {
             onFailure={this.responseGoogle} />
         } */}
 
-        <Route exact path="/" render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>} />
-        {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
-        <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
-        <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
+          <Route exact path="/" render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
+          {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
+          <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
+          <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
+
+          </div>
         {/* <PrivateRoute user={this.state.loggedIn} exact path="/" component={Home} /> */}
         {/* <PrivateRoute user={this.state.loggedIn} exact path="/login" component={Login} /> */}
 
