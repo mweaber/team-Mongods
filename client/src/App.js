@@ -13,6 +13,7 @@ import Shop from "./components/Shop";
 import ErrorPage from "./components/ErrorPage";
 import GoogleLogin from 'react-google-login';
 import Sidenav from "./components/sidenav/SideNav";
+import Characters from "./components/Characters"
 
 const protected1 = () => (
   <h3>This is your homepage</h3>
@@ -131,6 +132,7 @@ class App extends Component {
           {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
           <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
           <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
+          <PrivateRoute user={this.state.loggedIn} exact path="/characters" component={Characters} />
 
           </div>
         {/* <PrivateRoute user={this.state.loggedIn} exact path="/" component={Home} /> */}
