@@ -3,24 +3,24 @@ import "./App.css";
 // import Background from "./pencilbkgrnd.jpg";
 // import ComicCard from "./components/ComicCard";
 // import Card from "./components/Card";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import Temp from "./placeholder.json";
-import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom";
+// import Login from "./components/Login";
+// import Temp from "./placeholder.json";
+import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import Saved from "./components/Saved";
 import Shop from "./components/Shop";
-import ErrorPage from "./components/ErrorPage";
-import GoogleLogin from 'react-google-login';
+// import ErrorPage from "./components/ErrorPage";
+// import GoogleLogin from 'react-google-login';
 import Sidenav from "./components/sidenav/SideNav";
 import Characters from "./components/Characters"
 
-const protected1 = () => (
-  <h3>This is your homepage</h3>
-)
-const protected2 = () => (
-  <h2>You are not logged in</h2>
-)
+// const protected1 = () => (
+//   <h3>This is your homepage</h3>
+// )
+// const protected2 = () => (
+//   <h2>You are not logged in</h2>
+// )
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   return (
@@ -53,12 +53,6 @@ class App extends Component {
     };
   }
 
-
-  componentDidMount() {
-
-
-  }
-
   responseGoogle = (res) => {
     console.log(res)
 
@@ -77,9 +71,9 @@ class App extends Component {
     console.log(localStorage)
   }
 
-  componentDidMount() {
+  // componentDidMount() {
 
-  }
+  // }
 
   // testAuth = () => {
   //   $.get('/api/test')

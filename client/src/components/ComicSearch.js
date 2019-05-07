@@ -13,7 +13,7 @@
                                         onChange={this.props.handleInputChange}
                                         name="search"
                                         placeholder = "Enter a Character Name" />
-                                <label for="name">Search</label>
+                                <label htmlFor="name">Search</label>
                                 {/* Look into onClick vs onSubmit */}
                                 <button className="searchButton" onClick = {this.props.handleFormSubmit}>Search</button>
                             </div>

@@ -1,5 +1,5 @@
 import GoogleLogin from 'react-google-login';
-import App from "../App";
+// import App from "../App";
 import React, { Component } from "react";
 
 
