@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import SearchBar from "./SearchBar"
+import ComicSearch from "./ComicSearch"
 import comicAPI from "../util/comicAPI";
 
 class Characters extends Component {
     state = {
-        search: "",
+        search: "wolverine",
         result: []
     };
 
@@ -21,19 +21,22 @@ class Characters extends Component {
         this.items = this.state.result.data;
         this.items.forEach(one => {
            console.log(one.title);
-           console.log(one.location);
-           console.log(one.galleryURL);
-           console.log(one.viewItemURL);
+        //    console.log(one.location);
+        //    console.log(one.galleryURL);
+        //    console.log(one.viewItemURL);
          });
     }
 
     handleFormSubmit = e => {
+        console.log("PRESS BUTAN HAPPEND")
+        console.log(this.state)
         e.preventDefault();
      //    console.log(this.state.search);
-        comicAPI.findCharacter(this.state.search).then( (result) =>  {
+        comicAPI.findCharacter(this.state.search).then((result) =>  {
              this.setState({
                  result:result
              })
+             console.log(this.state.result)
         }).catch( (err) => {
             console.log(err);
         })
@@ -44,7 +47,7 @@ class Characters extends Component {
             <div>
             
                 <div className="col s12">
-                    <SearchBar search ={this.state.search} handleInputChange ={this.handleInputChange}
+                    <ComicSearch search ={this.state.search} handleInputChange ={this.handleInputChange}
                     handleFormSubmit = {this.handleFormSubmit}/>
                 </div>
 

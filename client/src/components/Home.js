@@ -53,17 +53,6 @@ class Home extends Component {
                             ))
                         }
                     </div>
-
-                    <div className="body">
-                        <h2>Body and things to work on:</h2>
-                        <ul>
-                            <li>Get comic API</li>
-                            <li>Get the eBay API</li>
-                            <li>Set up routes</li>
-                            <li>Make a fav search</li>
-                            <li>Maybe some games or little time wasters</li>
-                        </ul>
-                    </div>
                 </div>
                 {/* <Footer /> */}
             </div>
