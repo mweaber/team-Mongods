@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar"
 import API from "../util/API";
-import SideNav from "./sidenav/SideNav";
+// import SideNav from "./sidenav/SideNav";
 import ItemCard from "./ItemCard";
 
 

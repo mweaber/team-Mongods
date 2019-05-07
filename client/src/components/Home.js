@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Background from "../images/wallbackground.jpg"
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Background from "../images/wallbackground.jpg"
 import Background2 from "../images/unsplashBack1-4k.jpg"
 import ComicCard from "./ComicCard";
 import Card from "./Card"
-import InputForm from "./InputForm"
+// import InputForm from "./InputForm"
 import Temp from "../placeholder.json"
-import Footer from "./Footer"
+// import Footer from "./Footer"
 import SideNav from "./sidenav/SideNav";
 
 const sectionStyle = {
