@@ -7,15 +7,15 @@ import ItemCard from "./ItemCard";
 
 class Shop extends Component {
     state = {
-        search: "iphone",
+        search: "",
         result: []
     };
 
-    //    componentDidMount() {
-    //     API.findItemsByKeywords().then(test => {
-    //         console.log(test);
-    //     })
-    //    };
+       componentDidMount() {
+        API.findItemsByKeywords().then(test => {
+            console.log(test);
+        })
+       };
 
     handleInputChange = e => {
         //    console.log(e.target);
