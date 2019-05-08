@@ -4,7 +4,7 @@ import comicAPI from "../util/comicAPI";
 
 class Characters extends Component {
     state = {
-        search: "wolverine",
+        search: "",
         result: []
     };
 
@@ -28,14 +28,20 @@ class Characters extends Component {
 
 
     handleFormSubmit = e => {
-        console.log("PRESS BUTAN HAPPEND")
-        console.log(this.state)
+        // console.log("PRESS BUTAN HAPPEND")
+        // console.log(this.state)
         e.preventDefault();
         //    console.log(this.state.search);
         comicAPI.findCharacter(this.state.search)
-            .then(result => console.log(result))
+            .then(result => {
+                this.setState({
+                    result: result.data.results[0]
+                })
+            })
             .catch(err => console.log(err))
         // console.log(comicAPI.test())
+        // console.log(this.state.result)
+        
     };
 
     render() {
@@ -51,6 +57,7 @@ class Characters extends Component {
                     {/* Lets add the results cards down here under the search. */}
                     <p items={this.handleResults}></p>
                 </div>
+                <div>{JSON.stringify(this.state.result)}</div>
             </div>
         );
     }
