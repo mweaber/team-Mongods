@@ -12,7 +12,7 @@ class SideNav extends Component {
         // console.log(this.props.loggedIn + "sidenav props are happening");
         return (
             <div>
-                <ul id="slide-out" className="sidenav sidenav-fixed" style={{ width: "10px" }}>
+                <ul id="slide-out" className="sidenav sidenav-fixed" style={{ width: "170px" }}>
                     <li>
                         <div className="user-view">
                             <div className="background">
