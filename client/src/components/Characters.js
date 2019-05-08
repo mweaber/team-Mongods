@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import ComicSearch from "./ComicSearch"
 import comicAPI from "../util/comicAPI";
+import CharacterCard from "./CharacterCard";
 
 class Characters extends Component {
     state = {
         search: "",
-        result: []
+        result: [],
+        image: ""
     };
 
     handleInputChange = e => {
@@ -18,12 +20,9 @@ class Characters extends Component {
     };
 
     // handleResults() {
-    //     this.items = this.state.result.data;
-    //     this.items.forEach(one => {
-    //         console.log(one.title);
-    //         //    console.log(one.location);
-    //         //    console.log(one.galleryURL);
-    //         //    console.log(one.viewItemURL);
+    //     this.person = this.state.result;
+    //     this.person.forEach(people => {
+    //         console.log(people.image)
     // });
 
 
@@ -35,14 +34,19 @@ class Characters extends Component {
         comicAPI.findCharacter(this.state.search)
             .then(result => {
                 this.setState({
-                    result: result.data.results[0]
+                    result: result.data.results[0],
+                    image: result.data.results[0].image.small_url
                 })
+                // console.log(this.state.result.aliases)
+                // console.log(this.state.result.image.small_url)
             })
             .catch(err => console.log(err))
         // console.log(comicAPI.test())
         // console.log(this.state.result)
-        
+       
     };
+
+    
 
     render() {
         return (
@@ -55,12 +59,18 @@ class Characters extends Component {
 
                 <div className="col s12">
                     {/* Lets add the results cards down here under the search. */}
-                    <p items={this.handleResults}></p>
+                    {/* <p>{this.handleResults}</p> */}
                 </div>
-                <div>{JSON.stringify(this.state.result)}</div>
+                <div className="MakeSmaller" style={{width:960, float: "right"}}>
+                    {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
+                    <h5>{JSON.stringify(this.state.result.deck)}</h5>
+                    {/* <h5>{JSON.stringify(this.state.result.image[0])}</h5> */}
+                    <img src={this.state.image}></img>  
+                </div>
             </div>
         );
     }
 }
+
 
     export default Characters;
