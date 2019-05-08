@@ -41,19 +41,6 @@ class Shop extends Component {
         e.preventDefault();
         //    console.log(this.state.search);
         API.findItemsByKeywords(this.state.search).then((result) => {
-            //    let items = result.data;
-
-            //    console.log(items)
-            //    console.log(items[0].title + " " + items[0].galleryURL + " " + items[0].location + " " + items[0].viewItemURL)
-            ////////////////////////////////////////
-            //    this.state.cards.map(card => (
-            //     <Card
-            //         key={card.id}
-            //         id={card.id}
-            //         alt={card.name}
-            //         image={card.image}
-            //     />
-            // ))
             this.setState({
                 result: result.data
             })

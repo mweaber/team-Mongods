@@ -29,8 +29,8 @@ class SideNav extends Component {
                         <div className="divider"></div>
                     </li>
                     <li><a className="subheader">Options</a></li>
+                    <li><a className="waves-effect" href="/">Home</a></li>
                     <li><a className="waves-effect" href="/characters">Find a Character</a></li>
-                    <li><a className="waves-effect" href="#!">Appearances</a></li>
                     <li><a className="waves-effect" href="#!">Movies</a></li>
                     <li><a className="Waves-effect" href="/shop">eBay Items</a></li>
                     <li><LoginButton loggedIn={this.props.loggedIn} logout={this.props.logout} userID={this.props.userID} email={this.props.email} responseGoogle={this.props.responseGoogle} /></li>
