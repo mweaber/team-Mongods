@@ -34,7 +34,7 @@ class ComicCard extends Component {
                 {/* <div className="box" style={ boxStyle }>
                         <InputForm  />
                 </div> */}
-                <div className=" col offset-s3">
+                <div className=" col">
                     <div className="card">
                         <div className="card-image">
                             <img src={SideCover} alt="sides of comics"/>

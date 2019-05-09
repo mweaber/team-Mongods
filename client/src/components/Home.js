@@ -14,6 +14,11 @@ const sectionStyle = {
     backgroundSize: "cover"
 }
 
+const containerStyle ={
+ paddingLeft: "170px",
+
+}
+
 
 
 class Home extends Component {
@@ -36,9 +41,7 @@ class Home extends Component {
                 <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} />
             
             <div style={ sectionStyle }>
-                <div className="row" style={ sectionStyle }>
-                </div>
-                <div className="row">
+                <div className="row" style={containerStyle}>
                     <div className="col s6 m6 l6">
                         <ComicCard />
                     </div>

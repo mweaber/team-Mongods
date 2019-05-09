@@ -37,7 +37,7 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
+    // console.log(this.props)
     const id = localStorage.getItem("id");
     const email = localStorage.getItem("email");
     const photo = localStorage.getItem("photo");
@@ -64,11 +64,11 @@ class App extends Component {
       photo: res.w3.Paa
     })
     console.log(this.state.userID)
-    console.log(localStorage)
+  
     localStorage.setItem("email", this.state.email)
     localStorage.setItem("userID", this.state.userID)
     localStorage.setItem("photo", this.state.photo)
-    console.log(localStorage)
+  
   }
 
   // componentDidMount() {

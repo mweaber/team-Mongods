@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import App from "../../App";
-// import SideNavCSS from "./SideNavCSS.css";
+import "./SideNavCSS.css";
 // import SideNavImg from "./1b.jpg"
 import SideNavbk from "./sideCovers.jpg"
 // import GoogleLogin from "react-google-login";

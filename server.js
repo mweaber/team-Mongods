@@ -39,9 +39,11 @@ if (process.env.NODE_ENV === "production") {
 
 
 // Define API routes here
-app.use(router);
-app.use("/api", apiRouter);
 app.use("/auth", authRouter);
+app.use("/api", apiRouter);
+// app.use(router);
+
+
 
 
 
