@@ -7,15 +7,15 @@ import ItemCard from "./ItemCard";
 
 class Shop extends Component {
     state = {
-        search: "iphone",
+        search: "",
         result: []
     };
 
-    //    componentDidMount() {
-    //     API.findItemsByKeywords().then(test => {
-    //         console.log(test);
-    //     })
-    //    };
+       componentDidMount() {
+        API.findItemsByKeywords().then(test => {
+            console.log(test);
+        })
+       };
 
     handleInputChange = e => {
         //    console.log(e.target);
@@ -34,6 +34,23 @@ class Shop extends Component {
             console.log(one.galleryURL);
             console.log(one.viewItemURL);
         });
+    }
+
+    handleSave = e => {
+        e.preventDefault()
+        const dat = e.target.dataset;
+        
+        const newEbay = {
+            link: dat.link,
+            title: dat.title,
+            image: dat.image
+        }
+
+        API.saveNewEbay(newEbay)
+            .then(result => {
+                console.log(result)
+            })
+            .catch(err =>  console.log(err))
     }
 
 
@@ -74,6 +91,7 @@ class Shop extends Component {
                             location={item.location}
                             title={item.title}
                             link={item.viewItemURL}
+                            handleSave={this.handleSave}
                         />))}
                 </div>
             </div>

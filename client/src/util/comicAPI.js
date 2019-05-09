@@ -9,9 +9,9 @@ export default {
         // return axios.get(`https://comicvine.gamespot.com/api/characters/?api_key=c9fea9053bbb565b7f4b69a097b2f30be2fc3a56&format=json&filter=${data}`)
         return axios.get(corsURL + url)  
     },
-    // test() {
-    //     return true
-    // }
+    test() {
+        return true
+    }
 };
 
 
