@@ -13,13 +13,3 @@ export default {
         return true
     }
 };
-
-
-
-// 
-// const url = 'https://omdbapi.com/?apikey=trilogy&t="ghost in the shell"'
-// const corsURL = "https://cors-anywhere.herokuapp.com/"
-
-// fetch(corsURL + url)
-// .then(res => res.json())
-// .then(res => console.log(res))

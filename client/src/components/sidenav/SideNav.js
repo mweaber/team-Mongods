@@ -9,7 +9,6 @@ import LoginButton from "../LoginButton";
 class SideNav extends Component {
   
     render() {
-        // console.log(this.props.loggedIn + "sidenav props are happening");
         return (
             <div>
                 <ul id="slide-out" className="sidenav sidenav-fixed" style={{ width: "170px" }}>

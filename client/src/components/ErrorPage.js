@@ -6,7 +6,7 @@ class ErrorPage extends Component {
         return(
             <div>
                 <h5>If you break it you buy it.</h5>
-                <h2>YA DON GOOFED!</h2>
+                <h2>This is a 404 error of sorts.</h2>
             </div>
         );
     }
