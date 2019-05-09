@@ -10,7 +10,8 @@ import Temp from "../placeholder.json"
 import SideNav from "./sidenav/SideNav";
 
 const sectionStyle = {
-    backgroundImage: `url(${Background2})`
+    backgroundImage: `url(${Background2})`,
+    backgroundSize: "cover"
 }
 
 
