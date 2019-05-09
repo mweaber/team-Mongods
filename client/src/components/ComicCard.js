@@ -38,11 +38,11 @@ class ComicCard extends Component {
                     <div className="card">
                         <div className="card-image">
                             <img src={SideCover} alt="sides of comics"/>
-                            <span className="card-title black-text z-depth-1">Replace with input Section?</span>
+                            <span className="card-title">Convert to full input section</span>
                             {/* <a href="#" className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a> */}
                         </div>
                         <div className="card-content">
-                            <p>Login Inpu Removed - Oauth</p>
+                            <p>Conver to full input section</p>
                         </div>
                     </div>
                 </div>

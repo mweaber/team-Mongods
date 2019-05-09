@@ -1,2 +1,2 @@
-var instance = M.Sidenav.getInstance(elem);
-instance.open();
+// var instance = M.Sidenav.getInstance(elem);
+// // instance.open();
