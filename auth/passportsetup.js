@@ -6,7 +6,7 @@ passport.use(
     new GoogleStrategy(
         {
             //options
-            clientID: "76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com",
+            clientID: process.env.GOOGLE_CLIENT_ID,
             // clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL: '/auth/google/redirect'
         },
@@ -21,7 +21,7 @@ passport.use(
                         email: profile.emails[0].value
                     }
                 }
-            ).spread((user, created) => {
+            ).then((user, created) => {
                 //console.log(user.dataValues);
                 done(null, user);
             });
@@ -30,13 +30,13 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-    // console.log("serialize: " + JSON.stringify(user))
+    
     done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
     db.User.findById(id).then((user) => {
-        // console.log("deserialize:" + JSON.stringify(user));
+       
         done(null, user);
     });
 });

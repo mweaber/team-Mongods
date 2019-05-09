@@ -36,6 +36,23 @@ class Shop extends Component {
         });
     }
 
+    handleSave = e => {
+        e.preventDefault()
+        const dat = e.target.dataset;
+        
+        const newEbay = {
+            link: dat.link,
+            title: dat.title,
+            image: dat.image
+        }
+
+        API.saveNewEbay(newEbay)
+            .then(result => {
+                console.log(result)
+            })
+            .catch(err =>  console.log(err))
+    }
+
 
     handleFormSubmit = e => {
         e.preventDefault();
@@ -74,6 +91,7 @@ class Shop extends Component {
                             location={item.location}
                             title={item.title}
                             link={item.viewItemURL}
+                            handleSave={this.handleSave}
                         />))}
                 </div>
             </div>

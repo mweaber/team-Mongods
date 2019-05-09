@@ -22,12 +22,9 @@ class CharacterCard extends Component {
                     </div>
              
             </div>
-
-                
-
-
         );
     }
 }
+
 
 export default CharacterCard;

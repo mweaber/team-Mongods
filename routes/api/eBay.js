@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Ebay = require("ebay-node-api");
-
+const dbEbay = require("../../models/ebay");
 let ebay = new Ebay({
     clientID: "MatthewW-teamMong-PRD-bea920fd0-d55acc84",
     limit: 6
@@ -36,6 +36,16 @@ router.get("/search/:query", (req, res) => {
         console.log(error);
     });
 
+})
+
+router.post("/ebay/save", (req,res) => {
+    const newEbay = new dbEbay(req.body.newEbay)
+
+    // If you have the user set to the request object using passport...
+    // newEbay.userID = req.user._id;
+    newEbay.save()
+        .then(result => res.json(result))
+        .catch(err => res.json(err))
 })
 
 
