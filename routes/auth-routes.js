@@ -13,10 +13,10 @@ router.get('/google', passport.authenticate('google', {
 
 router.get('/google/redirect', 
     passport.authenticate('google'), 
-    
     (req, res) => {
-    res.redirect('/Shop');
     console.log("Auth path hit")
+    res.redirect('../Shop');
+    
 });
 
 module.exports = router;
