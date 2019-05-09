@@ -9,7 +9,7 @@ const cookieSession = require('cookie-session');
 const passport = require('./auth/passportsetup');
 const authRouter = require('./routes/auth-routes');
 const apiRouter = require('./routes/api-routes');
-// const db = require("./models");
+const db = require("./models");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
