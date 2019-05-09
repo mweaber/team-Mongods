@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const db = require('../models/user');
+const db = require('../models');
 
 //middleware for protecting routes
 function checkAuth(req, res, next) {
@@ -19,19 +19,5 @@ router.get('/test', checkAuth, (req, res) => {
 })
 
 
-
-//delete user --previous project-- -- up for mongo
-// router.delete('/removeuser', checkAuth, (req, res) => {
-//     db.User.destroy({
-//             where: {
-//                 id: req.user.id,
-//             }
-//         })
-//         .then(result => res.json(result))
-//         .catch(err => res.json(err));
-// })
-
-
-//add a med 
 
 module.exports = router;

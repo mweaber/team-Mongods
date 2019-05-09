@@ -43,8 +43,14 @@ class Shop extends Component {
         const newEbay = {
             link: dat.link,
             title: dat.title,
-            image: dat.image
+            image: dat.image,
+            // userId: (localStorage.getItem(UserID)),
+            // email: (localStorage.getItem(email))
         }
+
+        // localStorage.setItem("email", this.state.email)
+        // localStorage.setItem("userID", this.state.userID)
+        // localStorage.setItem("photo", this.state.photo)
 
         API.saveNewEbay(newEbay)
             .then(result => {
