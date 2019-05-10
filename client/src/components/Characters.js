@@ -7,7 +7,8 @@ class Characters extends Component {
     state = {
         search: "",
         result: [],
-        image: ""
+        image: "",
+        res: []
     };
 
     handleInputChange = e => {
@@ -42,8 +43,80 @@ class Characters extends Component {
             })
             .catch(err => console.log(err))
         // console.log(comicAPI.test())
-        // console.log(this.state.result)
-       
+        // console.log(this.state.result)   
+    };
+
+        handleFormSubmit2 = e => {
+        // console.log("PRESS BUTAN HAPPEND")
+        // console.log(this.state)
+        e.preventDefault();
+        //    console.log(this.state.search);
+        comicAPI.findDeadpool()
+            .then(res => {
+                this.setState({
+                    res: res.data.results[0],
+                    image: res.data.results[0].image.small_url
+                })
+                // console.log(this.state.result.aliases)
+                // console.log(this.state.result.image.small_url)
+            })
+            .catch(err => console.log(err))
+        // console.log(comicAPI.test())
+        // console.log(this.state.result)     
+    };
+    handleFormSubmit3 = e => {
+        // console.log("PRESS BUTAN HAPPEND")
+        // console.log(this.state)
+        e.preventDefault();
+        //    console.log(this.state.search);
+        comicAPI.findSpiderman()
+            .then(res => {
+                this.setState({
+                    res: res.data.results[0],
+                    image: res.data.results[0].image.small_url
+                })
+                // console.log(this.state.result.aliases)
+                // console.log(this.state.result.image.small_url)
+            })
+            .catch(err => console.log(err))
+        // console.log(comicAPI.test())
+        // console.log(this.state.result) 
+    };
+    handleFormSubmit4 = e => {
+        // console.log("PRESS BUTAN HAPPEND")
+        // console.log(this.state)
+        e.preventDefault();
+        //    console.log(this.state.search);
+        comicAPI.findRedSonja()
+            .then(res => {
+                this.setState({
+                    res: res.data.results[0],
+                    image: res.data.results[0].image.small_url
+                })
+                // console.log(this.state.result.aliases)
+                // console.log(this.state.result.image.small_url)
+            })
+            .catch(err => console.log(err))
+        // console.log(comicAPI.test())
+        // console.log(this.state.result)      
+    };
+    handleFormSubmit5 = e => {
+        // console.log("PRESS BUTAN HAPPEND")
+        // console.log(this.state)
+        e.preventDefault();
+        //    console.log(this.state.search);
+        comicAPI.findThanos()
+            .then(res => {
+                this.setState({
+                    res: res.data.results[0],
+                    image: res.data.results[0].image.small_url
+                })
+                // console.log(this.state.result.aliases)
+                // console.log(this.state.result.image.small_url)
+            })
+            .catch(err => console.log(err))
+        // console.log(comicAPI.test())
+        // console.log(this.state.result)     
     };
 
     
@@ -54,7 +127,9 @@ class Characters extends Component {
 
                 <div className="col s12">
                     <ComicSearch search={this.state.search} handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit} />
+                        handleFormSubmit={this.handleFormSubmit} handleFormSubmit2={this.handleFormSubmit2}
+                        handleFormSubmit3={this.handleFormSubmit3} handleFormSubmit4={this.handleFormSubmit4}
+                        handleFormSubmit5={this.handleFormSubmit5} />
                 </div>
 
                 <div className="col s12">
@@ -64,7 +139,7 @@ class Characters extends Component {
                 <div className="MakeSmaller" style={{width:960, float: "right"}}>
                     {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
                     <h5>{JSON.stringify(this.state.result.deck)}</h5>
-                    {/* <h5>{JSON.stringify(this.state.result.image[0])}</h5> */}
+                    <h5>{JSON.stringify(this.state.res.deck)}</h5>
                     <img src={this.state.image}></img>  
                 </div>
             </div>
