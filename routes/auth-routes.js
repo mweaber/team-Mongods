@@ -8,12 +8,15 @@ router.get("/logout", function(req, res) {
 
 router.get('/google', passport.authenticate('google', {
     scope: ['profile', 'email']
+
 }));
 
 router.get('/google/redirect', 
     passport.authenticate('google'), 
     (req, res) => {
-    res.redirect('/');
+    console.log("Auth path hit")
+    res.redirect('../Shop');
+    
 });
 
 module.exports = router;

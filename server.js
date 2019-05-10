@@ -2,14 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const app = express();
-const router = require("./routes");
+const router = require("./routes/api");
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser");
 const cookieSession = require('cookie-session');
 const passport = require('./auth/passportsetup');
 const authRouter = require('./routes/auth-routes');
 const apiRouter = require('./routes/api-routes');
-// const db = require("./models");
+const db = require("./models");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -39,9 +39,13 @@ if (process.env.NODE_ENV === "production") {
 
 
 // Define API routes here
-// app.use(router);
-app.use("/api", apiRouter);
 app.use("/auth", authRouter);
+app.use("/api", apiRouter);
+// app.use(router);
+
+
+
+
 
 //other requests his React App
 //any other API routes must be defined before this line

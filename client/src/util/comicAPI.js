@@ -11,6 +11,7 @@ export default {
     },
     test() {
         return true
+
     },
     findDeadpool() {
         // console.log("Inside API file " + " " + data);
@@ -56,3 +57,5 @@ export default {
 // fetch(corsURL + url)
 // .then(res => res.json())
 // .then(res => console.log(res))
+
+

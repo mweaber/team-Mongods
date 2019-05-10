@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Ebay = require("ebay-node-api");
 const dbEbay = require("../../models/ebay");
 let ebay = new Ebay({
-    clientID: "MatthewW-teamMong-PRD-bea920fd0-d55acc84",
+    clientID: process.env.EBAY_API,
     limit: 6
 });
 
@@ -14,7 +14,7 @@ router.get("/search/:query", (req, res) => {
     ebay.findItemsByKeywords(req.params.query).then((result) => {
         const useable = result[0]
 
-        // console.log(useable.searchResult[0].item);
+        console.log(useable.searchResult[0].item);
         // useable.searchResult[0].item[0].forEach(one => {
         // //   console.log(one.title);
         // //   console.log(one.location);
