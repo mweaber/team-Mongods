@@ -42,7 +42,7 @@ router.post("/ebay/save", (req,res) => {
     const newEbay = new dbEbay(req.body.newEbay)
 
     // If you have the user set to the request object using passport...
-    // newEbay.userID = req.user._id;
+    newEbay.userID = req.user._id;
     newEbay.save()
         .then(result => res.json(result))
         .catch(err => res.json(err))

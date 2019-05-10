@@ -7,7 +7,7 @@ import "./App.css";
 import Home from "./components/Home";
 // import Login from "./components/Login";
 // import Temp from "./placeholder.json";
-import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
 import Saved from "./components/Saved";
 import Shop from "./components/Shop";
 // import ErrorPage from "./components/ErrorPage";
@@ -38,97 +38,57 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    // console.log(this.props)
-    const id = localStorage.getItem("id");
-    const email = localStorage.getItem("email");
-    const photo = localStorage.getItem("photo");
-    const userID = localStorage.getItem("userID");
-    console.log(id)
     this.state = {
-      loggedIn: id ? true : false,
-      email: email,
-      photo: photo,
-      userID: userID
-
-      // cards: Temp
+      loggedIn: false,
+      email: "",
+      userID: "",
+      photo: null
     };
 
 
   }
 
   componentDidMount(){
-    // Axios.get()
+    Axios.get("/auth/getuser").then(res => {
+      console.log(res.data)
+      this.setState({
+        loggedIn: true,
+        email: res.data.user.email,
+        userID: res.data.user.name,
+        photo: res.data.user.img
+      })
+
+      console.log("magnets")
+      console.log(this.state.email)
+      console.log(this.state.userID)
+      console.log(this.state.photo)
+    })
+    .catch(err => console.log(err))
     ///// add path to call and determine whether or not i am logged in
   }
 
-
-  responseGoogle = (res) => {
-    console.log(res)
-
-    localStorage.setItem('id', res.googleId);
-    this.setState({
-      loggedIn: true,
-      email: res.w3.U3,
-      userID: res.w3.ig,
-      photo: res.w3.Paa
-    })
-    console.log(this.state.userID)
-  
-    localStorage.setItem("email", this.state.email)
-    localStorage.setItem("userID", this.state.userID)
-    localStorage.setItem("photo", this.state.photo)
-  
-  }
-
-  // componentDidMount() {
-
-  // }
-
-  // testAuth = () => {
-  //   $.get('/api/test')
-  //   .then(res => {
-  //     this.setState({ 
-  //       isAuth: true,
-  //       email:  res.data.email,
-  //       userId: res.data.id
-  //     })
-  //   })
-  //   .catch(err => this.setState({
-  //       isAuth: false
-  //   }))
-
-
-  logout = () => {
-    localStorage.clear();
-    console.log("the logout button was clicked")
-    this.setState({
-      loggedIn: false,
-      email: "",
-      userID: "",
-      photo: null
-    })
-  }
 
   render() {
     return (
 
       <Router>
-        {/* //// 
+        {/* ////
         <Sidenav {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>}/>
-        
+
         */}
         <div>
-        <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>
-
-          <Route exact path="/" render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
+        <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo}/>
+          <Switch>
           {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
-          <PrivateRoute user={this.state.loggedIn} exact path="/saved" component={Saved} />
-          <PrivateRoute user={this.state.loggedIn} exact path="/shop" component={Shop} />
-          <PrivateRoute user={this.state.loggedIn} exact path="/characters" component={Characters} />
+          <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
+          <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
+          <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
+          <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
+          </Switch>
 
           </div>
-        {/* <PrivateRoute user={this.state.loggedIn} exact path="/" component={Home} /> */}
-        {/* <PrivateRoute user={this.state.loggedIn} exact path="/login" component={Login} /> */}
+        {/* <Route user={this.state.loggedIn} exact path="/" component={Home} /> */}
+        {/* <Route user={this.state.loggedIn} exact path="/login" component={Login} /> */}
 
         {/* <Switch>
             <Route exact path= "/" component={Home} />

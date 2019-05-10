@@ -2,23 +2,36 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const db = require('../models');
 
-passport.use( 
+passport.use(
     new GoogleStrategy(
         {
-            //options
+            callbackURL:'/auth/google/redirect',
             clientID: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: '/auth/google/redirect'
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+
         },
         (accessToken, refreshToken, profile, done) => {
-            //console.log(profile);
-            db.Users.create({
-                email: "this little tacos e-mail",
-                name:  "this little tacos name",
-                img: "this little tacos profile photo"
-            }).then((user, created) => {
-                console.log("user was saved to database")
-                done(null, user)
+            // console.log(profile);
+            db.Users.findOne({
+                googleid: profile.id
+
+                // email: "this little tacos e-mail",
+                // name:  "this little tacos name",
+                // img: "this little tacos profile photo"
+            }).then((user) => {
+                // console.log("user was saved to database")
+                if (user) {
+                    done(null, user)
+                }else{
+                    db.Users.create({
+                        googleid: profile.id,
+                        email: profile.emails[0].value,
+                        img: profile.photos[0].value,
+                        name: profile.displayName
+                    }).then((user) => {
+                        done(null, user)
+                    })
+                }
                 // res.redirect(307, "")
             }).catch((err) => {
                 console.log(err);
@@ -30,13 +43,13 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-    
-    done(null, user.id);
+    // console.log(user)
+    done(null, user.googleid);
 });
 
 passport.deserializeUser((id, done) => {
-    db.Users.findById(id).then((user) => {
-       
+    db.Users.findOne({googleid: id}).then((user) => {
+        // console.log(user)
         done(null, user);
     });
 });

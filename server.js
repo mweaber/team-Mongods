@@ -37,20 +37,19 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
 // Define API routes here
 app.use("/auth", authRouter);
 app.use("/api", apiRouter);
 // app.use(router);
 
-
-
-
-
 //other requests this React App
 //any other API routes must be defined before this line
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  if (process.env.NODE_ENV === "production") {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  } else {
+    res.redirect(process.env.REACT_ROUTE)
+  }
 });
 
 /// DB setup

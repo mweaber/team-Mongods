@@ -8,7 +8,10 @@ export default {
 
     saveNewEbay(newEbay) {
         return axios.post("/shop/ebay/save", {newEbay})
-    }
+    },
 
+    checkUser() {
+        return axios.get("/auth/test/what");
+    }
 
 };

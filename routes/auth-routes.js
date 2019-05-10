@@ -1,25 +1,38 @@
 const router = require('express').Router();
 const passport = require('passport');
+const redirectRoute = process.env.NODE_ENV === 'production' ? '/' : process.env.REACT_ROUTE
 
-router.get("/logout", function(req, res) {
-    req.logout();
-    res.clearCookie("process.env.COOKIE_NAME").redirect("/");
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.clearCookie("process.env.COOKIE_NAME").redirect(redirectRoute);
 });
 
 router.get('/google', passport.authenticate('google', {
-    scope: ['profile', 'email']
+  scope: ['profile', 'email']
+}));
 
-}), (req, res) => {res.send("test")
-console.log("the route on line 9 was hit!!!! for real.")
-}
-);
+router.get("/getuser", function (req, res) {
+  if (req.user) {
+    res.json({ user: req.user })
+  }
+  else {
+    res.status(401).json({ err: "you are the god of suck" })
+  }
+})
 
-router.get('/google/redirect', 
-    passport.authenticate('google'), 
-    (req, res) => {
+router.get('/google/redirect', passport.authenticate('google'),
+  (req, res) => {
     console.log("Auth path hit")
-    res.redirect('/');
-    
-});
+    res.redirect(redirectRoute);
+  });
+
+  router.get('/test/what', function(req, res) {
+    console.log(req.user)
+    if (req.user) {
+      res.json({ user: true})
+    }else {
+      res.json({ user:false })
+    }
+  })
 
 module.exports = router;

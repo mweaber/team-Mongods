@@ -8,14 +8,15 @@ import Card from "./Card"
 import Temp from "../placeholder.json"
 // import Footer from "./Footer"
 import SideNav from "./sidenav/SideNav";
+import API from "../util/API"
 
 const sectionStyle = {
     backgroundImage: `url(${Background2})`,
     backgroundSize: "cover"
 }
 
-const containerStyle ={
- paddingLeft: "170px",
+const containerStyle = {
+    paddingLeft: "170px",
 
 }
 
@@ -30,8 +31,14 @@ class Home extends Component {
     //     }
     // }
 
-    state={
+    state = {
         cards: Temp
+    }
+
+    checkUser() {
+        API.checkUser()
+            .then(result => console.log(result.data))
+            .catch(err => console.log(err))
     }
 
     render() {
@@ -39,27 +46,28 @@ class Home extends Component {
         return (
             <div>
                 <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} />
-            
-            <div style={ sectionStyle }>
-                <div className="row" style={containerStyle}>
-                    <div className="col s6 m6 l6">
-                        <ComicCard />
+
+                <div style={sectionStyle}>
+                    <div className="row" style={containerStyle}>
+                        <button onClick={this.checkUser} >Test</button>
+                        <div className="col s6 m6 l6">
+                            <ComicCard />
+                        </div>
+                        <div className="col s4">
+                            {
+                                this.state.cards.map(card => (
+                                    <Card
+                                        key={card.id}
+                                        id={card.id}
+                                        alt={card.name}
+                                        image={card.image}
+                                    />
+                                ))
+                            }
+                        </div>
                     </div>
-                    <div className="col s4">
-                        {
-                            this.state.cards.map(card => (
-                                <Card
-                                    key={card.id}
-                                    id={card.id}
-                                    alt={card.name}
-                                    image={card.image}
-                                />
-                            ))
-                        }
-                    </div>
+                    {/* <Footer /> */}
                 </div>
-                {/* <Footer /> */}
-            </div>
             </div>
         )
     }

@@ -64,11 +64,10 @@ class Shop extends Component {
         e.preventDefault();
         //    console.log(this.state.search);
         API.findItemsByKeywords(this.state.search).then((result) => {
+            console.log(result.data);
             this.setState({
                 result: result.data
             })
-            console.log(this.state.result)
-
             // console.log(result.data)
         }).catch((err) => {
             console.log(err);
@@ -90,7 +89,7 @@ class Shop extends Component {
                 </div>
                 <div className="row">
 
-                    {this.state.result.map(item => (
+                    {/* {this.state.result.map(item => (
                         <ItemCard
                             key={item.itemId}
                             image={item.galleryURL}
@@ -98,7 +97,7 @@ class Shop extends Component {
                             title={item.title}
                             link={item.viewItemURL}
                             handleSave={this.handleSave}
-                        />))}
+                        />))} */}
                 </div>
             </div>
         );
