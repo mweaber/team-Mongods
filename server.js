@@ -54,7 +54,7 @@ app.get("*", (req, res) => {
 });
 
 /// DB setup
-mongoose.connect("mongodb://localhost/Mongods", {useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Mongods", {useNewUrlParser: true})
   .then(app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   }));
