@@ -1,9 +1,16 @@
 import GoogleLogin from 'react-google-login';
 // import App from "../App";
 import React, { Component } from "react";
+import Axios from 'axios';
+
 
 
 class LoginButton extends Component {
+    // login = () => { Axios.get("/auth/google").then(res=> {
+    //     console.log(res)
+    // } )}
+
+
     render() {
         return (
             <div>
@@ -17,6 +24,7 @@ class LoginButton extends Component {
                 //         onFailure={this.props.responseGoogle} />
                 // }
                 :<a href={`http://localhost:3001/auth/google/`} className="btn">Google Login Button</a>}
+                {/* :<a href={"#"} onClick={this.login} className="btn">Google Login Button</a>} */}
             </div>
         )
     }

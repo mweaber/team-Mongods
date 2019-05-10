@@ -14,6 +14,7 @@ import Shop from "./components/Shop";
 // import GoogleLogin from 'react-google-login';
 import Sidenav from "./components/sidenav/SideNav";
 import Characters from "./components/Characters"
+import Axios from "axios";
 
 // const protected1 = () => (
 //   <h3>This is your homepage</h3>
@@ -51,7 +52,15 @@ class App extends Component {
 
       // cards: Temp
     };
+
+
   }
+
+  componentDidMount(){
+    // Axios.get()
+    ///// add path to call and determine whether or not i am logged in
+  }
+
 
   responseGoogle = (res) => {
     console.log(res)
@@ -110,17 +119,6 @@ class App extends Component {
         */}
         <div>
         <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>
-
-
-          {/* {this.state.loggedIn
-          ? <button style={{ float: "right" }} onClick={this.logout}>Logout</button>
-          : <GoogleLogin
-            clientId="76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com"
-            buttonText="Login with Google"
-            style={{ float: "right" }}
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle} />
-        } */}
 
           <Route exact path="/" render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
           {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
