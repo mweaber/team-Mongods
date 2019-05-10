@@ -16,6 +16,10 @@
                                 <label htmlFor="name">Search</label>
                                 {/* Look into onClick vs onSubmit */}
                                 <button className="searchButton" onClick = {this.props.handleFormSubmit}>Search</button>
+                                <button className="searchButton" onClick = {this.props.handleFormSubmit2}>Deadpool</button>
+                                <button className="searchButton" onClick = {this.props.handleFormSubmit3}>Spider-man</button>
+                                <button className="searchButton" onClick = {this.props.handleFormSubmit4}>Red Sonja</button>
+                                <button className="searchButton" onClick = {this.props.handleFormSubmit5}>Thanos</button>
                             </div>
                         </form>
                     </div>
