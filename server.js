@@ -47,7 +47,7 @@ app.use("/api", apiRouter);
 
 
 
-//other requests his React App
+//other requests this React App
 //any other API routes must be defined before this line
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

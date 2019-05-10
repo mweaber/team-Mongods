@@ -18,6 +18,7 @@ passport.use(
                 img: "this little tacos profile photo"
             }).then((user, created) => {
                 console.log("user was saved to database")
+                done(null, user)
                 // res.redirect(307, "")
             }).catch((err) => {
                 console.log(err);
