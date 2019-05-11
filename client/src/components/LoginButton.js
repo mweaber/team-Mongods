@@ -12,7 +12,7 @@ class LoginButton extends Component {
     constructor(props) {
       super(props)
       console.log(process.env.NODE_ENV)
-      this.url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://comic-shopper.herokuapp.com/'
+      this.url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://comic-shopper.herokuapp.com'
     }
 
     render() {
