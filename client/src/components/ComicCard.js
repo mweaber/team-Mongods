@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SideCover from "../images/sideCoversSmall.jpg";
+import Spider from "../images/jean-philippe-delberghe-640668-unsplash.jpg"
 // import InputForm from "./InputForm"
 // // import "../materialize.js"
 
@@ -31,19 +32,16 @@ class ComicCard extends Component {
     render() {
         return (
             <div>
-                {/* <div className="box" style={ boxStyle }>
-                        <InputForm  />
-                </div> */}
-                <div className=" col">
+                <div className="col s12">
                     <div className="card">
                         <div className="card-image">
-                            <img src={SideCover} alt="sides of comics"/>
-                            <span className="card-title">Convert to full input section</span>
+                            <img src={Spider} alt="sides of comics"/>
+                            <span className="card-title">Statues and Collectibles</span>
                             {/* <a href="#" className="btn-floating halfway-fab waves-effect waves-light grey"><i className="material-icons">add</i></a> */}
                         </div>
-                        <div className="card-content">
-                            <p>Conver to full input section</p>
-                        </div>
+                        {/* <div className="card-content">
+                            <p></p>
+                        </div> */}
                     </div>
                 </div>
 

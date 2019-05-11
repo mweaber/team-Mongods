@@ -46,7 +46,7 @@ class Characters extends Component {
         // console.log(this.state.result)   
     };
 
-        handleFormSubmit2 = e => {
+    handleFormSubmit2 = e => {
         // console.log("PRESS BUTAN HAPPEND")
         // console.log(this.state)
         e.preventDefault();
@@ -61,11 +61,10 @@ class Characters extends Component {
                 // console.log(this.state.result.image.small_url)
             })
             .catch(err => console.log(err))
-        // console.log(comicAPI.test())
-        // console.log(this.state.result)     
+           
     };
     handleFormSubmit3 = e => {
-        // console.log("PRESS BUTAN HAPPEND")
+        
         // console.log(this.state)
         e.preventDefault();
         //    console.log(this.state.search);
@@ -75,26 +74,20 @@ class Characters extends Component {
                     res: res.data.results[0],
                     image: res.data.results[0].image.small_url
                 })
-                // console.log(this.state.result.aliases)
-                // console.log(this.state.result.image.small_url)
+        
             })
             .catch(err => console.log(err))
-        // console.log(comicAPI.test())
-        // console.log(this.state.result) 
     };
     handleFormSubmit4 = e => {
-        // console.log("PRESS BUTAN HAPPEND")
-        // console.log(this.state)
+
         e.preventDefault();
-        //    console.log(this.state.search);
         comicAPI.findRedSonja()
             .then(res => {
                 this.setState({
                     res: res.data.results[0],
                     image: res.data.results[0].image.small_url
                 })
-                // console.log(this.state.result.aliases)
-                // console.log(this.state.result.image.small_url)
+ 
             })
             .catch(err => console.log(err))
         // console.log(comicAPI.test())
@@ -119,33 +112,36 @@ class Characters extends Component {
         // console.log(this.state.result)     
     };
 
-    
+
 
     render() {
         return (
             <div>
+                <div className="row">
+                    <div className="col s3 offset-s2">
+                        <ComicSearch search={this.state.search} handleInputChange={this.handleInputChange}
+                            handleFormSubmit={this.handleFormSubmit} handleFormSubmit2={this.handleFormSubmit2}
+                            handleFormSubmit3={this.handleFormSubmit3} handleFormSubmit4={this.handleFormSubmit4}
+                            handleFormSubmit5={this.handleFormSubmit5} />
+                    </div>
 
-                <div className="col s12">
-                    <ComicSearch search={this.state.search} handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit} handleFormSubmit2={this.handleFormSubmit2}
-                        handleFormSubmit3={this.handleFormSubmit3} handleFormSubmit4={this.handleFormSubmit4}
-                        handleFormSubmit5={this.handleFormSubmit5} />
-                </div>
 
-                <div className="col s12">
+                    {/* <div className="col s12"> */}
                     {/* Lets add the results cards down here under the search. */}
                     {/* <p>{this.handleResults}</p> */}
+                    {/* </div> */}
+                    <div className="MakeSmaller col s4" >
+                        {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
+                        <h5>{JSON.stringify(this.state.result.deck)}</h5>
+                        <h5>{JSON.stringify(this.state.res.deck)}</h5>
+                        <img src={this.state.image}></img>
+                    </div>
                 </div>
-                <div className="MakeSmaller" style={{width:960, float: "right"}}>
-                    {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
-                    <h5>{JSON.stringify(this.state.result.deck)}</h5>
-                    <h5>{JSON.stringify(this.state.res.deck)}</h5>
-                    <img src={this.state.image}></img>  
-                </div>
+
             </div>
         );
     }
 }
 
 
-    export default Characters;
+export default Characters;

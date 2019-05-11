@@ -6,16 +6,16 @@
             return (
                 <div>
                     <div className="row">
-                        <form className="col s6 offset-s4">
-                            <div className="input-field col s5">
+                        <form className="col s6 offset-s1">
+                            <div className="input-field col s5" style={{backgroundColor: "white"}}>
                                 <input id="name" type="text" className="validate" 
                                         value = {this.props.search}
                                         onChange={this.props.handleInputChange}
                                         name="search"
-                                        placeholder = "Whatchu lookin' fer?" />
-                                <label for="name">Search</label>
+                                        placeholder = "Enter Search Term for Ebay" />
+                                <label for="name"></label>
                                 {/* Look into onClick vs onSubmit */}
-                                <button className="searchButton" onClick = {this.props.handleFormSubmit}>Search</button>
+                                <button className="searchButton btn" onClick = {this.props.handleFormSubmit}>Search</button>
                             </div>
                         </form>
                     </div>

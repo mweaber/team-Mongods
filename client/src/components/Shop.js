@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar"
 import API from "../util/API";
-// import SideNav from "./sidenav/SideNav";
 import ItemCard from "./ItemCard";
+import Background2 from "../images/unsplashBack1-4k.jpg"
+
+
+const sectionStyle = {
+    backgroundImage: `url(${Background2})`,
+    backgroundSize: "cover",
+    height: "1080px"
+}
+
+const containerStyle = {
+    paddingLeft: "170px",
+
+}
 
 
 class Shop extends Component {
@@ -11,11 +23,11 @@ class Shop extends Component {
         result: []
     };
 
-       componentDidMount() {
+    componentDidMount() {
         API.findItemsByKeywords().then(test => {
             console.log(test);
         })
-       };
+    };
 
     handleInputChange = e => {
         //    console.log(e.target);
@@ -39,24 +51,19 @@ class Shop extends Component {
     handleSave = e => {
         e.preventDefault()
         const dat = e.target.dataset;
-        
+
         const newEbay = {
             link: dat.link,
             title: dat.title,
             image: dat.image,
-            // userId: (localStorage.getItem(UserID)),
-            // email: (localStorage.getItem(email))
-        }
 
-        // localStorage.setItem("email", this.state.email)
-        // localStorage.setItem("userID", this.state.userID)
-        // localStorage.setItem("photo", this.state.photo)
+        }
 
         API.saveNewEbay(newEbay)
             .then(result => {
                 console.log(result)
             })
-            .catch(err =>  console.log(err))
+            .catch(err => console.log(err))
     }
 
 
@@ -77,27 +84,35 @@ class Shop extends Component {
     render() {
         return (
             <div>
-                {/* <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} /> */}
-                <div className="col s6">
-                    <SearchBar search={this.state.search} handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit} />
-                </div>
+                <div style={sectionStyle}>
+                    <div style={containerStyle}>
+                    </div>
 
-                <div className="col s6">
-                    {/* Lets add the results cards down here under the search. */}
-                    {/* <p items={this.handleResults}></p> */}
-                </div>
-                <div className="row">
 
-                    {this.state.result.map(item => (
-                        <ItemCard
-                            key={item.itemId}
-                            image={item.galleryURL}
-                            location={item.location}
-                            title={item.title}
-                            link={item.viewItemURL}
-                            handleSave={this.handleSave}
-                        />))}
+
+                    <div className="row">
+
+                        <div className="col s12">
+                            <SearchBar search={this.state.search} handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit} />
+                        </div>
+
+                        <div className="row">
+                            <div className="col s1">
+                            </div>
+                            <div className="col s11">
+                                {this.state.result.map(item => (
+                                    <ItemCard
+                                        key={item.itemId}
+                                        image={item.galleryURL}
+                                        location={item.location}
+                                        title={item.title}
+                                        link={item.viewItemURL}
+                                        handleSave={this.handleSave}
+                                    />))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

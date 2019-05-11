@@ -27,7 +27,7 @@ class LoginButton extends Component {
                 //         onSuccess={this.props.responseGoogle}
                 //         onFailure={this.props.responseGoogle} />
                 // }
-                :<a href={`${this.url}/api/auth/google/`} className="btn">Google Login Button</a>}
+                :<a href={`${this.url}/api/auth/google/`} className="btn"><i className="fab fa-google-plus" style={{paddingRight: "2px"}}></i>Google Login Button</a>}
                 {/* :<a href={"#"} onClick={this.login} className="btn">Google Login Button</a>} */}
             </div>
         )

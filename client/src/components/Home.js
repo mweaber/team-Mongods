@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Background from "../images/wallbackground.jpg"
 import Background2 from "../images/unsplashBack1-4k.jpg"
 import ComicCard from "./ComicCard";
@@ -54,6 +54,7 @@ class Home extends Component {
                     <div className="row" style={containerStyle}>
                         {/* <button onClick={this.checkUser} >Test</button> */}
                         <div className="col s6 m6 l6">
+                        
                             <ComicCard />
                         </div>
                         <div className="col s4">

@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Background from "./pencilbkgrnd.jpg";
-// import ComicCard from "./components/ComicCard";
-// import Card from "./components/Card";
-// import Header from "./components/Header";
 import Home from "./components/Home";
-// import Login from "./components/Login";
-// import Temp from "./placeholder.json";
-import { BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import Saved from "./components/Saved";
 import Shop from "./components/Shop";
-// import ErrorPage from "./components/ErrorPage";
-// import GoogleLogin from 'react-google-login';
 import Sidenav from "./components/sidenav/SideNav";
 import Characters from "./components/Characters"
 import Axios from "axios";
+import Background2 from "./images/unsplashBack1-4k.jpg"
 
 // const protected1 = () => (
 //   <h3>This is your homepage</h3>
@@ -34,6 +27,16 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => {
   )
 }
 
+const sectionStyle = {
+  backgroundImage: `url(${Background2})`,
+  backgroundSize: "cover"
+}
+
+const containerStyle = {
+  paddingLeft: "170px",
+
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +51,7 @@ class App extends Component {
 
   }
 
-  componentDidMount(){
+  componentDidMount() {
     Axios.get("/api/auth/getuser").then(res => {
       console.log(res.data)
       this.setState({
@@ -57,13 +60,8 @@ class App extends Component {
         userID: res.data.user.name,
         photo: res.data.user.img
       })
-
-      console.log("magnets")
-      console.log(this.state.email)
-      console.log(this.state.userID)
-      console.log(this.state.photo)
     })
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
     ///// add path to call and determine whether or not i am logged in
   }
 
@@ -72,23 +70,23 @@ class App extends Component {
     return (
 
       <Router>
-        {/* ////
-        <Sidenav {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>}/>
-
-        */}
         <div>
-        <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo}/>
-          <Switch>
-          {/* <Route exactuser={this.state.loggedIn} exact path="/home" component={Home} /> */}
-          <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
-          <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
-          <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
-          <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
-          </Switch>
+          <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} />
+          <div style={sectionStyle}>
+            <div style={containerStyle}>
+            </div>
 
           </div>
-        {/* <Route user={this.state.loggedIn} exact path="/" component={Home} /> */}
-        {/* <Route user={this.state.loggedIn} exact path="/login" component={Login} /> */}
+          <Switch>
+            {/* <Route user={this.state.loggedIn} exact path="/home" component={Home} /> */}
+            <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
+            <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
+            <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
+            <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
+          </Switch>
+
+        </div>
+
 
         {/* <Switch>
             <Route exact path= "/" component={Home} />
