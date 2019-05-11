@@ -89,7 +89,7 @@ class Shop extends Component {
                 </div>
                 <div className="row">
 
-                    {/* {this.state.result.map(item => (
+                    {this.state.result.map(item => (
                         <ItemCard
                             key={item.itemId}
                             image={item.galleryURL}
@@ -97,7 +97,7 @@ class Shop extends Component {
                             title={item.title}
                             link={item.viewItemURL}
                             handleSave={this.handleSave}
-                        />))} */}
+                        />))}
                 </div>
             </div>
         );

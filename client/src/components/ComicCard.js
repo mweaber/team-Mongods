@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SideCover from "../images/sideCovers.jpg";
+import SideCover from "../images/sideCoversSmall.jpg";
 // import InputForm from "./InputForm"
 // // import "../materialize.js"
 

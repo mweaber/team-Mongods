@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    Axios.get("/auth/getuser").then(res => {
+    Axios.get("/api/auth/getuser").then(res => {
       console.log(res.data)
       this.setState({
         loggedIn: true,

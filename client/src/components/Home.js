@@ -8,7 +8,8 @@ import Card from "./Card"
 import Temp from "../placeholder.json"
 // import Footer from "./Footer"
 import SideNav from "./sidenav/SideNav";
-import API from "../util/API"
+import API from "../util/API";
+import Header from "./Header"
 
 const sectionStyle = {
     backgroundImage: `url(${Background2})`,
@@ -45,11 +46,13 @@ class Home extends Component {
         console.log(this.props)
         return (
             <div>
-                <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} />
-
+                {/* <div><Header /></div> */}
+                <div>
+                    <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} />
+                </div>
                 <div style={sectionStyle}>
                     <div className="row" style={containerStyle}>
-                        <button onClick={this.checkUser} >Test</button>
+                        {/* <button onClick={this.checkUser} >Test</button> */}
                         <div className="col s6 m6 l6">
                             <ComicCard />
                         </div>
@@ -69,6 +72,7 @@ class Home extends Component {
                     {/* <Footer /> */}
                 </div>
             </div>
+
         )
     }
 }

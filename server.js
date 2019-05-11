@@ -2,13 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const app = express();
-const router = require("./routes/api");
+const router = require("./routes");
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser");
 const cookieSession = require('cookie-session');
 const passport = require('./auth/passportsetup');
-const authRouter = require('./routes/auth-routes');
-const apiRouter = require('./routes/api-routes');
+// const authRouter = require('./routes/api/auth-routes');
+// const apiRouter = require('./routes/api-routes');
 const db = require("./models");
 const PORT = process.env.PORT || 3001;
 
@@ -38,19 +38,19 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use("/auth", authRouter);
-app.use("/api", apiRouter);
-// app.use(router);
+// app.use("/auth", authRouter);
+// app.use("/api", apiRouter);
+app.use(router);
 
 //other requests this React App
 //any other API routes must be defined before this line
-app.get("*", (req, res) => {
-  if (process.env.NODE_ENV === "production") {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  } else {
-    res.redirect(process.env.REACT_ROUTE)
-  }
-});
+// app.get("*", (req, res) => {
+//   if (process.env.NODE_ENV === "production") {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+//   } else {
+//     res.redirect(process.env.REACT_ROUTE)
+//   }
+// });
 
 /// DB setup
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Mongods", {useNewUrlParser: true})

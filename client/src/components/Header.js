@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 
 class Header extends Component {
     render() {
+
+        const sectionStyle={
+            backgroundColor: "#294F52",
+            minHeight: "500px",
+            paddingBottom: "100px"
+        }
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper  indigo dark-4">
+                    <div className="nav-wrapper" style={{sectionStyle}}>
                     <Link to ="/"><a href="" className="brand-logo">&nbsp;Comics and things</a></Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
