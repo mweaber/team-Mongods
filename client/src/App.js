@@ -74,6 +74,7 @@ class App extends Component {
       sNav: !prevState.sNav
     })
     )
+    console.log(this.state.sNav)
   }
 
   render() {
@@ -81,19 +82,19 @@ class App extends Component {
 
       <Router>
         <div>
-          {/* <div style={sectionStyle}> */}
-          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} /> : <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>}
-          {/* <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} /> */}
+
+          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/> : <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>}
 
 
 
-          {/* </div> */}
+
+
           <Switch>
-            {/* <Route user={this.state.loggedIn} exact path="/home" component={Home} /> */}
+
             <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
             <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
             <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
-            <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
+            <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>} />
           </Switch>
           {/* </div> */}
         </div>
