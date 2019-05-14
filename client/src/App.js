@@ -9,6 +9,8 @@ import Characters from "./components/Characters"
 import Axios from "axios";
 import Background2 from "./images/unsplashBack1-4k.jpg"
 import SideNavButton from "./components/SideNavButton"
+import Banner from "./components/banner/Banner"
+import StatueInput from "./components/statueInput/StatueInput";
 
 // const protected1 = () => (
 //   <h3>This is your homepage</h3>
@@ -69,12 +71,12 @@ class App extends Component {
   }
 
   handleSideNav = e => {
-    console.log("Sidenav button was clicked")
+  
     this.setState(prevState => ({
       sNav: !prevState.sNav
     })
     )
-    console.log(this.state.sNav)
+   
   }
 
   render() {
@@ -82,21 +84,19 @@ class App extends Component {
 
       <Router>
         <div>
-
-          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/> : <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>}
-
-
-
+          <Banner sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>
+          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/> : console.log("sidenav is false")}
+          {/* <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav} */}
 
 
           <Switch>
-
-            <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
+            <Route user={this.state.loggedIn} exact path="/saved" component={Saved } />
             <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
             <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
-            <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>} />
+            <Route user={this.state.loggedIn} exact path="/statueinput" component={StatueInput} />
+            <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>} />
           </Switch>
-          {/* </div> */}
+
         </div>
 
       </Router>

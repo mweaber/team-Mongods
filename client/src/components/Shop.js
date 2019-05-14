@@ -5,12 +5,6 @@ import ItemCard from "./ItemCard";
 import Background2 from "../images/unsplashBack1-4k.jpg"
 
 
-const sectionStyle = {
-    backgroundImage: `url(${Background2})`,
-    backgroundSize: "cover",
-    height: "1080px"
-}
-
 const containerStyle = {
     paddingLeft: "170px",
 
@@ -84,14 +78,9 @@ class Shop extends Component {
     render() {
         return (
             <div>
-                <div style={sectionStyle}>
                     <div style={containerStyle}>
                     </div>
-
-
-
                     <div className="row">
-
                         <div className="col s12">
                             <SearchBar search={this.state.search} handleInputChange={this.handleInputChange}
                                 handleFormSubmit={this.handleFormSubmit} />
@@ -113,7 +102,7 @@ class Shop extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+              
             </div>
         );
     }

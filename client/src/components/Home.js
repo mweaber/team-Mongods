@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Background from "../images/wallbackground.jpg"
-import Background2 from "../images/unsplashBack1-4k.jpg"
 import ComicCard from "./ComicCard";
 import Card from "./Card"
 // import InputForm from "./InputForm"
 import Temp from "../placeholder.json"
 // import Footer from "./Footer"
-import SideNav from "./sidenav/SideNav";
 import API from "../util/API";
-import Header from "./Header"
-import SideNavButton from "./SideNavButton";
+import Banner from "./banner/Banner"
 
 // const sectionStyle = {
 //     backgroundImage: `url(${Background2})`,
@@ -37,27 +33,26 @@ class Home extends Component {
         console.log(this.props)
         return (
             <div>
-                <div>
-                </div>
-                    <div className="row" style={containerStyle}>
-                        <div className="col s12 m6 l6">
-                        
-                            <ComicCard />
-                        </div>
-                        <div className="col s12 m4 l4">
-                            {
-                                this.state.cards.map(card => (
-                                    <Card
-                                        key={card.id}
-                                        id={card.id}
-                                        alt={card.name}
-                                        image={card.image}
-                                    />
-                                ))
-                            }
-                            {/* <SideNavButton /> */}
-                        </div>
+
+                <div className="row" style={containerStyle}>
+                    <div className="col s12 m6 l6">
+
+                        <ComicCard />
                     </div>
+                    <div className="col s12 m4 l4">
+                        {
+                            this.state.cards.map(card => (
+                                <Card
+                                    key={card.id}
+                                    id={card.id}
+                                    alt={card.name}
+                                    image={card.image}
+                                />
+                            ))
+                        }
+                        {/* <SideNavButton /> */}
+                    </div>
+                </div>
             </div>
 
         )

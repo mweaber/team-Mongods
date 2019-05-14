@@ -15,7 +15,7 @@ class LoginButton extends Component {
         return (
             <div>
                 {this.props.loggedIn
-                    ? <a href={`${this.url}/api/auth/logout/`} className="btn">Logout</a>
+                    ? <a href={`${this.url}/api/auth/logout/`} className="btn-small grey dark-1">Logout</a>
                 //     : <GoogleLogin
                 //         clientId="76521146114-75a1tkldbt9tr9thhf8a604ut9fvpoie.apps.googleusercontent.com"
                 //         buttonText="Login with Google"
@@ -23,7 +23,7 @@ class LoginButton extends Component {
                 //         onSuccess={this.props.responseGoogle}
                 //         onFailure={this.props.responseGoogle} />
                 // }
-                :<a href={`${this.url}/api/auth/google/`} className="btn"><i className="fab fa-google-plus" style={{paddingRight: "2px"}}></i>Google Login Button</a>}
+                :<a href={`${this.url}/api/auth/google/`} className="btn-small grey dark-1"><i className="fab fa-google-plus" style={{paddingRight: "10px"}}></i>Google Login Button</a>}
                 {/* :<a href={"#"} onClick={this.login} className="btn">Google Login Button</a>} */}
             </div>
         )
