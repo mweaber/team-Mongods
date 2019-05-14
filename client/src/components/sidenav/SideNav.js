@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import App from "../../App";
-
 // import SideNavImg from "./1b.jpg"
 import SideNavbk from "./sideCovers.jpg"
 // import GoogleLogin from "react-google-login";

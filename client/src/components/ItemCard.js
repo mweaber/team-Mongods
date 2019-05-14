@@ -15,7 +15,7 @@ class ItemCard extends Component {
         return (
             <div>
                 {/* <div className="row"> */}
-                <div className="col s2">
+                <div className="col s12">
                     <div className="card" >
                         <div className="card-image">
                             <img alt={this.props.name} src={this.props.image} />

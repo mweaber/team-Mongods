@@ -32,3 +32,7 @@
   }
 }
 
+body {
+  background-image: url("./images/unsplashBack1-4k.jpg");
+  background-size: cover
+}

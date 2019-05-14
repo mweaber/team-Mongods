@@ -11,10 +11,10 @@ import SideNav from "./sidenav/SideNav";
 import API from "../util/API";
 import Header from "./Header"
 
-const sectionStyle = {
-    backgroundImage: `url(${Background2})`,
-    backgroundSize: "cover"
-}
+// const sectionStyle = {
+//     backgroundImage: `url(${Background2})`,
+//     backgroundSize: "cover"
+// }
 
 const containerStyle = {
     paddingLeft: "170px",
@@ -48,16 +48,16 @@ class Home extends Component {
             <div>
                 {/* <div><Header /></div> */}
                 <div>
-                    <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} />
+                    {/* <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} /> */}
                 </div>
-                <div style={sectionStyle}>
+                {/* <div style={sectionStyle}> */}
                     <div className="row" style={containerStyle}>
                         {/* <button onClick={this.checkUser} >Test</button> */}
-                        <div className="col s6 m6 l6">
+                        <div className="col s12 m6 l6">
                         
                             <ComicCard />
                         </div>
-                        <div className="col s4">
+                        <div className="col s12 m4 l4">
                             {
                                 this.state.cards.map(card => (
                                     <Card
@@ -71,7 +71,7 @@ class Home extends Component {
                         </div>
                     </div>
                     {/* <Footer /> */}
-                </div>
+                {/* </div> */}
             </div>
 
         )
