@@ -1,0 +1,10 @@
+.gridArea {
+    display: grid;
+    grid-template-columns: 550px 550px 550px 550px;
+    
+}
+
+.card{
+    height: 800px;
+    width: 550px;
+}
