@@ -38,14 +38,15 @@ class SideNav extends Component {
                     <li><a className="waves-effect" href="/">Home</a></li>
                     <li><a className="waves-effect" href="/characters"><center>Who's that hero?</center></a></li>
                     <li><a className="waves-effect" href="#!">Movies</a></li>
-                    <li><a className="Waves-effect" href="/shop">eBay Items</a></li>
+                    <li><a className="waves-effect" href="/shop">eBay Items</a></li>
                     <div className="divider"></div>
                     <li><a className="waves-effect" href="/characters"><center>Profile</center></a></li>
+                    <li><a className="waves-effect" href="statueinput"><center>Add Statue</center></a></li>
                     <li><a className="waves-effect" href="#!"><center>Registered Pieces</center></a></li>
-                    <li><a className="Waves-effect" href="/shop"><center>PO List</center></a></li>
+                    <li><a className="waves-effect" href="/shop"><center>PO List</center></a></li>
                     <li><center><LoginButton loggedIn={this.props.loggedIn} logout={this.props.logout} userID={this.props.userID} email={this.props.email} responseGoogle={this.props.responseGoogle} /></center></li>
                     <div className="divider"></div>
-                    <li><center><a className="btn-small" onClick={this.props.handleSideNav}>Close SideNav</a></center></li>
+                    <li><center><a className="btn-small grey dark-1" onClick={this.props.handleSideNav}>Close SideNav</a></center></li>
                 </ul>
                 </div>
             

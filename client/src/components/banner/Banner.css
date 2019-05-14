@@ -1,0 +1,28 @@
+.banner-image {
+    /* z-index: -1; */
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: panning 100s infinite ease-in-out;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/sideCoversCrop.jpg")
+  }
+  
+  @keyframes panning {
+    0% {
+      background-position: 0 0;
+    }
+    25% {
+      background-position: 100% 100%;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    75% {
+      background-position: 0 100%;
+    }
+    200% {
+      background-position: 0 0;
+    }
+  }  
