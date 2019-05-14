@@ -13,27 +13,27 @@ class Login extends Component {
                 <div className="row">
                     <form className="col s12">
 
-                        <div className="input-field col s5">
+                        <div className="input-field col s12 m5 l5">
                             <input id="name" type="text" className="validate" />
                             <label for="name">First Name</label>
                             {/* <label for="first name">First Name</label> */}
 
                         </div>
-                        <div className="input-field col s5">
+                        <div className="input-field col s12 m5 l5">
                             <input id="last_name" type="text" className="validate" />
                             <label for="last_name">Last Name</label>
                         </div>
 
 
 
-                        <div className="input-field col s5">
+                        <div className="input-field col s12 m5 l5">
                             <input id="email" type="email" className="validate" />
                             <label for="email">Email</label>
                         </div>
 
 
 
-                        <div className="input-field col s5">
+                        <div className="input-field col s12 m5 l5">
                             <input id="password" type="password" className="validate" />
                             <label for="password">Password</label>
                         </div>

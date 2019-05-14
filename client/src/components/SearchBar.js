@@ -6,8 +6,8 @@
             return (
                 <div>
                     <div className="row">
-                        <form className="col s6 offset-s1">
-                            <div className="input-field col s5" style={{backgroundColor: "white"}}>
+                        <form className="col s11 offset-s1">
+                            <div className="input-field col s12 m5 l5" style={{backgroundColor: "white"}}>
                                 <input id="name" type="text" className="validate" 
                                         value = {this.props.search}
                                         onChange={this.props.handleInputChange}

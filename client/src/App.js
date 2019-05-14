@@ -8,6 +8,7 @@ import Sidenav from "./components/sidenav/SideNav";
 import Characters from "./components/Characters"
 import Axios from "axios";
 import Background2 from "./images/unsplashBack1-4k.jpg"
+import SideNavButton from "./components/SideNavButton"
 
 // const protected1 = () => (
 //   <h3>This is your homepage</h3>
@@ -45,7 +46,8 @@ class App extends Component {
       loggedIn: false,
       email: "",
       userID: "",
-      photo: null
+      photo: null,
+      sNav: false
     };
 
 
@@ -59,24 +61,33 @@ class App extends Component {
         email: res.data.user.email,
         userID: res.data.user.name,
         photo: res.data.user.img
+
       })
     })
       .catch(err => console.log(err))
     ///// add path to call and determine whether or not i am logged in
   }
 
+  handleSideNav = e => {
+    console.log("Sidenav button was clicked")
+    this.setState(prevState => ({
+      sNav: !prevState.sNav
+    })
+    )
+  }
 
   render() {
     return (
 
       <Router>
         <div>
-          <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} />
-          <div style={sectionStyle}>
-            <div style={containerStyle}>
-            </div>
+          {/* <div style={sectionStyle}> */}
+          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} /> : <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>}
+          {/* <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} /> */}
 
-          </div>
+
+
+          {/* </div> */}
           <Switch>
             {/* <Route user={this.state.loggedIn} exact path="/home" component={Home} /> */}
             <Route user={this.state.loggedIn} exact path="/saved" component={Saved} />
@@ -84,18 +95,8 @@ class App extends Component {
             <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
             <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle} />} />
           </Switch>
-
+          {/* </div> */}
         </div>
-
-
-        {/* <Switch>
-            <Route exact path= "/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/saved" component={Saved} />
-            <Route exact path="/shop" component={Shop} />
-            <Route component = {ErrorPage} />
-          </Switch> */}
-
 
       </Router>
     );

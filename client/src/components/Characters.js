@@ -94,9 +94,7 @@ class Characters extends Component {
         // console.log(this.state.result)      
     };
     handleFormSubmit5 = e => {
-        // console.log("PRESS BUTAN HAPPEND")
-        // console.log(this.state)
-        e.preventDefault();
+          e.preventDefault();
         //    console.log(this.state.search);
         comicAPI.findThanos()
             .then(res => {

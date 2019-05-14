@@ -98,9 +98,9 @@ class Shop extends Component {
                         </div>
 
                         <div className="row">
-                            <div className="col s1">
+                            <div className="col s12 m1 l1">
                             </div>
-                            <div className="col s11">
+                            <div className="col s12 m11 l11">
                                 {this.state.result.map(item => (
                                     <ItemCard
                                         key={item.itemId}
