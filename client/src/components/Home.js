@@ -10,6 +10,7 @@ import Temp from "../placeholder.json"
 import SideNav from "./sidenav/SideNav";
 import API from "../util/API";
 import Header from "./Header"
+import SideNavButton from "./SideNavButton";
 
 // const sectionStyle = {
 //     backgroundImage: `url(${Background2})`,
@@ -21,16 +22,7 @@ const containerStyle = {
 
 }
 
-
-
 class Home extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         cards: Temp
-    //     }
-    // }
 
     state = {
         cards: Temp
@@ -41,18 +33,13 @@ class Home extends Component {
             .then(result => console.log(result.data))
             .catch(err => console.log(err))
     }
-
     render() {
         console.log(this.props)
         return (
             <div>
-                {/* <div><Header /></div> */}
                 <div>
-                    {/* <SideNav loggedIn={this.props.loggedIn} email={this.props.email} userID={this.props.userID} logout={this.props.logout} photo={this.props.photo} responseGoogle={this.props.responseGoogle} /> */}
                 </div>
-                {/* <div style={sectionStyle}> */}
                     <div className="row" style={containerStyle}>
-                        {/* <button onClick={this.checkUser} >Test</button> */}
                         <div className="col s12 m6 l6">
                         
                             <ComicCard />
@@ -68,10 +55,9 @@ class Home extends Component {
                                     />
                                 ))
                             }
+                            {/* <SideNavButton /> */}
                         </div>
                     </div>
-                    {/* <Footer /> */}
-                {/* </div> */}
             </div>
 
         )

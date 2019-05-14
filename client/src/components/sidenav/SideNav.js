@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-// import App from "../../App";
-// import SideNavImg from "./1b.jpg"
 import SideNavbk from "./sideCovers.jpg"
-// import GoogleLogin from "react-google-login";
 import LoginButton from "../LoginButton";
 import Background2 from "../../images/unsplashBack1-4k.jpg"
-
-
 
 const sectionStyle = {
     backgroundImage: `url(${Background2})`,
@@ -17,6 +12,7 @@ const containerStyle = {
     paddingLeft: "170px",
 
 }
+
 class SideNav extends Component {
     render() {
         return (
@@ -48,14 +44,11 @@ class SideNav extends Component {
                     <li><a className="waves-effect" href="#!"><center>Registered Pieces</center></a></li>
                     <li><a className="Waves-effect" href="/shop"><center>PO List</center></a></li>
                     <li><center><LoginButton loggedIn={this.props.loggedIn} logout={this.props.logout} userID={this.props.userID} email={this.props.email} responseGoogle={this.props.responseGoogle} /></center></li>
+                    <div className="divider"></div>
+                    <li><center><a className="btn-small" onClick={this.props.handleSideNav}>Close SideNav</a></center></li>
                 </ul>
                 </div>
-             
-                {/* <div style={sectionStyle}>
-                    <div style={containerStyle}>
-                    </div>
-                    
-                </div> */}
+            
             </div>
         )
     }

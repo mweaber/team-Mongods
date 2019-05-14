@@ -6,12 +6,8 @@ import React, { Component } from "react";
 
 
 class LoginButton extends Component {
-    // login = () => { Axios.get("/auth/google").then(res=> {
-    //     console.log(res)
-    // } )}
     constructor(props) {
       super(props)
-      console.log(process.env.NODE_ENV)
       this.url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://comic-shopper.herokuapp.com'
     }
 
