@@ -63,13 +63,13 @@ class Shop extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault();
-        //    console.log(this.state.search);
+           console.log(this.state.search);
         API.findItemsByKeywords(this.state.search).then((result) => {
             console.log(result.data);
             this.setState({
                 result: result.data
             })
-            // console.log(result.data)
+            console.log(result.data)
         }).catch((err) => {
             console.log(err);
         })
