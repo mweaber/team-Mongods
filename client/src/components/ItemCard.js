@@ -22,6 +22,7 @@ class ItemCard extends Component {
                     </div>
                     <div className = "new_card_content">
                         <p>{ this.props.alt }</p>
+                        <p>Location: {this.props.location}</p>
                     </div>
                     <div className = "new_card_action">
                         <h6>Click the following link to check out this item:</h6>

@@ -1,0 +1,12 @@
+.gridArea {
+    display: grid;
+    grid-template-columns: 450px 450px;
+    /* width: fit-content;
+    height: fit-content; */
+    max-width: 450px;
+    max-height: 450px;
+    margin: auto;
+    /* border: solid black 2px; */
+    grid-gap: 2px;
+
+}

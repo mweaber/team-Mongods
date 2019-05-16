@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar"
 import API from "../util/API";
 import ItemCard from "./ItemCard";
 import Background2 from "../images/unsplashBack1-4k.jpg"
+import "../style/shopGrids.css"
 
 
 const containerStyle = {
@@ -86,16 +87,17 @@ class Shop extends Component {
                                 handleFormSubmit={this.handleFormSubmit} />
                         </div>
 
-                        <div className="row">
+                        <div className="row ">
                             <div className="col s12 m1 l1">
                             </div>
-                            <div className="col s12 m11 l11">
+                            <div className="col s12 m11 l11 gridArea">
                                 {this.state.result.map(item => (
                                     <ItemCard
                                         key={item.itemId}
                                         image={item.galleryURL}
                                         location={item.location}
                                         title={item.title}
+                                        location={item.location}
                                         link={item.viewItemURL}
                                         handleSave={this.handleSave}
                                     />))}

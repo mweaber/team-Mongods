@@ -1,17 +1,11 @@
-/* .gridArea {
-    display: grid;
-    grid-template-columns: 550px 550px 550px 550px;
-    
-} */
 
 .new_card_box {
-    margin-bottom: 30px;
-    padding: 5px;
     margin-bottom: 10px;
-    height: fit-content;
-    width: fit-content;
-    max-width: 500px;
-    max-height: 500px;
+    padding: 1px;
+    /* height: fit-content;
+    width: fit-content; */
+    max-width: 450px;
+    max-height: 450px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.609), rgba(207, 157, 47, 0.815));
     box-shadow:  4px 6px  rgba(46, 139, 69, 0.596);
     border: solid black 2px;
@@ -21,8 +15,8 @@
 }
 
 .new_image {
-    height:200px;
-    width:200px;
+    height:150px;
+    width:150px;
     margin: 0 auto;
     /* height: fit-content;
     width: fit-content; */
