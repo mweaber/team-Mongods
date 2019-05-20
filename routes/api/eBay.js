@@ -4,7 +4,7 @@ const dbEbay = require("../../models/ebay");
 
 let ebay = new ebayAPI({
     clientID: process.env.EBAY_API,
-    limit: 6
+    limit: 10
 });
 
 
@@ -37,6 +37,10 @@ router.get("/search/:query", (req, res) => {
             const useable = result[0];
             const ebayResult = useable.searchResult[0].item;
             res.json(ebayResult)
+            // Will need to move to new API as images are too small.
+            // console.log(useable);
+            // console.log(useable.searchResult[0]);
+            // console.log(ebayResult);
         })
         .catch(err => res.json(err))
 })
