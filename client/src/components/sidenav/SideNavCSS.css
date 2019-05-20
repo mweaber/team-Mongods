@@ -1,10 +1,27 @@
-header, main, footer {
+/* header, main, footer {
     padding-left: 300px;
   }
 
-  @media only screen and (max-width : 992px) {
+@media only screen and (max-width : 992px) {
     header, main, footer {
       padding-left: 0;
     }
-  }
+} */
+
+.background {
+   mix-blend-mode: darken;
+   /* color: black; */
+}
+
+.name, .email{
+    color: white;
+    /* font-size: 20px; */
+    text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
+}
+
+
 

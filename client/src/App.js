@@ -7,10 +7,9 @@ import Shop from "./components/Shop";
 import Sidenav from "./components/sidenav/SideNav";
 import Characters from "./components/Characters"
 import Axios from "axios";
-import Background2 from "./images/unsplashBack1-4k.jpg"
-import SideNavButton from "./components/SideNavButton"
 import Banner from "./components/banner/Banner"
 import StatueInput from "./components/statueInput/StatueInput";
+import Profile from "./components/profile/Profile"
 
 // const protected1 = () => (
 //   <h3>This is your homepage</h3>
@@ -19,26 +18,26 @@ import StatueInput from "./components/statueInput/StatueInput";
 //   <h2>You are not logged in</h2>
 // )
 
-const PrivateRoute = ({ component: Component, user, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) => user
-        ? <Component {...props} {...rest} user={user} />
-        : <Redirect to={{ pathname: "/home", state: { from: props.location } }} />}
-    />
-  )
-}
+// const PrivateRoute = ({ component: Component, user, ...rest }) => {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) => user
+//         ? <Component {...props} {...rest} user={user} />
+//         : <Redirect to={{ pathname: "/home", state: { from: props.location } }} />}
+//     />
+//   )
+// }
 
-const sectionStyle = {
-  backgroundImage: `url(${Background2})`,
-  backgroundSize: "cover"
-}
+// const sectionStyle = {
+//   backgroundImage: `url(${Background2})`,
+//   backgroundSize: "cover"
+// }
 
-const containerStyle = {
-  paddingLeft: "170px",
+// const containerStyle = {
+//   paddingLeft: "170px",
 
-}
+// }
 
 
 class App extends Component {
@@ -94,6 +93,7 @@ class App extends Component {
             <Route user={this.state.loggedIn} exact path="/shop" component={Shop} />
             <Route user={this.state.loggedIn} exact path="/characters" component={Characters} />
             <Route user={this.state.loggedIn} exact path="/statueinput" component={StatueInput} />
+            <Route user={this.state.loggedIn} exact path="/profile" component={Profile} />
             <Route render={(props) => <Home {...props} userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} logout={this.logout} photo={this.state.photo} responseGoogle={this.responseGoogle}/>} />
           </Switch>
 

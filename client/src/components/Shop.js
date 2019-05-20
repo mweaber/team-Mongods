@@ -6,11 +6,11 @@ import Background2 from "../images/unsplashBack1-4k.jpg"
 import "../style/shopGrids.css"
 
 
+
 const containerStyle = {
     paddingLeft: "170px",
 
 }
-
 
 class Shop extends Component {
     state = {

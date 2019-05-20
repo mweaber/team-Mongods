@@ -1,32 +1,38 @@
 import React, { Component } from "react";
 import SideNavbk from "./sideCovers.jpg"
 import LoginButton from "../LoginButton";
-import Background2 from "../../images/unsplashBack1-4k.jpg"
+// import Background2 from "../../images/unsplashBack1-4k.jpg"
+import "./SideNavCSS.css"
 
-const sectionStyle = {
-    backgroundImage: `url(${Background2})`,
-    backgroundSize: "cover"
-}
 
-const containerStyle = {
-    paddingLeft: "170px",
+// const sectionStyle = {
+//     backgroundImage: `url(${Background2})`,
+//     backgroundSize: "cover"
+// }
 
-}
+// const containerStyle = {
+//     paddingLeft: "170px",
+
+// }
 
 class SideNav extends Component {
     render() {
         return (
             <div>
                 <div>
-                <ul id="slide-out" className="sidenav sidenav-fixed" style={{ width: "170px" }}>
+                <ul id="slide-out" className="sidenav sidenav-fixed" style={{ width: "170px"}}>
                     <li>
-                        <div className="user-view">
+                        <div className="user-view" style={{padding: "10px"}}>
                             <div className="background">
-                                <img src={SideNavbk} />
+                                <img src={SideNavbk} alt="" style={{linearGradient: "rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)"}} />
                             </div>
-                            <a href="#user"><img className="circle" src={this.props.photo} /></a>
+
+                            {this.props.photo ? <center><a href="#user"><img alt="" className="circle" src={this.props.photo} style={{margin: "0px"}}/></a></center> : <a href="#user"><img alt="" className="circle" /></a>}
+                            {/* <a href="#user"><img className="circle" src={this.props.photo} /></a> */}
+
+
                             <a href="#name"><span className="white-text name">{this.props.userID}</span></a>
-                            {/* <a href="#email"><span className="white-text email">{this.props.email}</span></a> */}
+                            <a href="#email"><span className="white-text email" style={{padding: "0px"}}>{this.props.email}</span></a>
                         </div>
                     </li>
                     {/* <li><a href="#!"><center>Find Items</center></a></li> */}
@@ -46,7 +52,7 @@ class SideNav extends Component {
                     <li><a className="waves-effect" href="/shop"><center>PO List</center></a></li>
                     <li><center><LoginButton loggedIn={this.props.loggedIn} logout={this.props.logout} userID={this.props.userID} email={this.props.email} responseGoogle={this.props.responseGoogle} /></center></li>
                     <div className="divider"></div>
-                    <li><center><a className="btn-small grey dark-1" onClick={this.props.handleSideNav}>Close SideNav</a></center></li>
+                    <li><center><a href="" className="btn-small grey dark-1" onClick={this.props.handleSideNav}>Close SideNav</a></center></li>
                 </ul>
                 </div>
             

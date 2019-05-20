@@ -34,7 +34,9 @@
 
 /* body {
   background-image: url("./images/unsplashBack1-4k.jpg");
-  background-size: cover
+  background-size: cover;
+  background-color: white;
+  background-blend-mode: luminosity;
 } */
 body {
   background-color:#e6e5e8;

@@ -7,11 +7,22 @@ let ebay = new ebayAPI({
     limit: 10
 });
 
+
+function checkAuth(req, res, next) {
+    if (req.user) {
+        next();
+    } else {
+        res.status(401).json({
+            Error: "Unauthorized"
+        });
+    }
+}
+
 // Matches with the /saved
 
-router.post("/ebayAdd", (req, res) => {
+router.post("/ebayAdd", checkAuth, (req, res) => {
     console.log(req.body)
-    
+
     const newEbay = new dbEbay(req.body.newEbay);
     newEbay.userID = req.user._id;
     newEbay.save()
@@ -20,7 +31,7 @@ router.post("/ebayAdd", (req, res) => {
 
 })
 
-router.get("/search/:query", (req,res) => {
+router.get("/search/:query", (req, res) => {
     ebay.findItemsByKeywords(req.params.query)
         .then(result => {
             const useable = result[0];
