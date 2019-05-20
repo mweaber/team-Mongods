@@ -1,18 +1,15 @@
-/* .gridArea {
-    display: grid;
-    grid-template-columns: 550px 550px 550px 550px;
-    
-} */
 
 .new_card_box {
-    margin-bottom: 30px;
-    padding: 5px;
-    margin-bottom: 10px;
-    height: fit-content;
-    width: fit-content;
-    max-width: 500px;
-    max-height: 500px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.609), rgba(207, 157, 47, 0.815));
+    margin: 10px;
+    margin-bottom:25px;
+    padding: 25px;
+    /* height: fit-content;
+    width: fit-content; */
+    min-width: 450px;
+    min-height: 450px;
+    max-width: 450px;
+    max-height: 450px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.609), rgba(0,0,0,0.809));
     box-shadow:  4px 6px  rgba(46, 139, 69, 0.596);
     border: solid black 2px;
     /* margin: auto; */
@@ -21,13 +18,13 @@
 }
 
 .new_image {
-    height:200px;
-    width:200px;
+    height:150px;
+    width:150px;
     margin: 0 auto;
-    /* height: fit-content;
-    width: fit-content; */
-    /* max-width: 300px;
-    max-height: 300px; */
+    min-height: 150;
+    min-width: 150; 
+    max-width: 150px;
+    max-height: 150px;
     display: flex;
     align-self: center;
     align-items: center;
@@ -36,6 +33,62 @@
 
 }
 
-.new_card_title {
+.new_card_title{
     font-size: 18;
+    height: 65px;
+    width: 375px;
+    min-height: 65px;
+    min-width: 375px;
+    max-height: 65px;
+    max-width: 375px;
+    padding: 5px;
+    /* border: solid black 1px; */
 }
+
+.new_card_content {
+    /* border: solid black 1px; */
+    min-height: 35px;
+    min-width: 150px;
+    max-height: 35px;
+    max-width: 450px;
+}
+
+.new_card_action {
+    /* border:solid black 1px; */
+    min-height: 75px;
+    min-width: 150px;
+    max-height: 55px;
+    max-width: 450px;
+    margin-top: 10px;
+}
+
+.buttonSave{
+    /* border: solid rgb(88, 32, 32) 1px; */
+    margin-top: 25px;
+    margin-bottom: 25px;
+    /* position: relative; */
+    /* bottom:0; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    /* align-content: flex-end;
+    align-self: flex-end;
+    align-items: flex-end; */
+    
+}
+
+/* button{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+} */
+
+/* .saveButton{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+} */
