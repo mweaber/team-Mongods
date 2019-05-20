@@ -31,6 +31,11 @@ class Characters extends Component {
         // console.log("PRESS BUTAN HAPPEND")
         // console.log(this.state)
         e.preventDefault();
+        this.setState({
+            result:[],
+            image:"",
+            res:[]
+        })
         //    console.log(this.state.search);
         comicAPI.findCharacter(this.state.search)
             .then(result => {
@@ -50,6 +55,11 @@ class Characters extends Component {
         // console.log("PRESS BUTAN HAPPEND")
         // console.log(this.state)
         e.preventDefault();
+        this.setState({
+            result:[],
+            res:[],
+            image:""
+        })
         //    console.log(this.state.search);
         comicAPI.findDeadpool()
             .then(res => {
@@ -67,6 +77,11 @@ class Characters extends Component {
         
         // console.log(this.state)
         e.preventDefault();
+        this.setState({
+            result:[],
+            res:[],
+            image:""
+        })
         //    console.log(this.state.search);
         comicAPI.findSpiderman()
             .then(res => {
@@ -81,6 +96,11 @@ class Characters extends Component {
     handleFormSubmit4 = e => {
 
         e.preventDefault();
+        this.setState({
+            result:[],
+            res:[],
+            image:""
+        })
         comicAPI.findRedSonja()
             .then(res => {
                 this.setState({
@@ -95,12 +115,17 @@ class Characters extends Component {
     };
     handleFormSubmit5 = e => {
           e.preventDefault();
+          this.setState({
+            result:[],
+            res:[],
+            image:""
+        })
         //    console.log(this.state.search);
         comicAPI.findThanos()
             .then(res => {
                 this.setState({
                     res: res.data.results[0],
-                    image: res.data.results[0].image.small_url
+                    image: res.data.results[0].image.small_url            
                 })
                 // console.log(this.state.result.aliases)
                 // console.log(this.state.result.image.small_url)
