@@ -1,11 +1,5 @@
 const router = require("express").Router();
-const ebayAPI = require("ebay-node-api");
-const dbEbay = require("../../models/ebay");
-
-let ebay = new ebayAPI({
-    clientID: process.env.EBAY_API,
-    limit: 6
-});
+const dbStatues = require("../../models/statues");
 
 
 function checkAuth(req, res, next) {
@@ -20,23 +14,25 @@ function checkAuth(req, res, next) {
 
 // Matches with the /saved
 
-router.post("/ebayAdd", checkAuth, (req, res) => {
+router.post("/statueAdd", checkAuth, (req, res) => {
+  
     console.log(req.body)
+  
 
-    const newEbay = new dbEbay(req.body.newEbay);
-    newEbay.userID = req.user._id;
-    newEbay.save()
+    const newStatues = new dbStatues(req.body.newStatues);
+    newStatues.userID = req.user._id;
+    newStatues.save()
         .then(result => res.json(result))
         .catch(err => res.json(err))
 
 })
 
 router.get("/search/:query", (req, res) => {
-    ebay.findItemsByKeywords(req.params.query)
+    statues.findItemsByKeywords(req.params.query)
         .then(result => {
             const useable = result[0];
-            const ebayResult = useable.searchResult[0].item;
-            res.json(ebayResult)
+            const statuesResult = useable.searchResult[0].item;
+            res.json(statuesResult)
         })
         .catch(err => res.json(err))
 })

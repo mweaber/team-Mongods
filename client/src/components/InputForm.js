@@ -28,7 +28,7 @@ class InputForm extends Component {
 
 
 
-                        <div className="input-field col s12 m5 l5">
+                        <div className="input-field col s12 m5 l5name">
                             <input id="password" type="password" className="validate" />
                             <label for="password">Password</label>
                         </div>

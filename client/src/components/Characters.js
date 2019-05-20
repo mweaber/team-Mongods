@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ComicSearch from "./ComicSearch"
 import comicAPI from "../util/comicAPI";
-import CharacterCard from "./CharacterCard";
+// import CharacterCard from "./CharacterCard";
 
 class Characters extends Component {
     state = {
@@ -132,7 +132,7 @@ class Characters extends Component {
                         {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
                         <h5>{JSON.stringify(this.state.result.deck)}</h5>
                         <h5>{JSON.stringify(this.state.res.deck)}</h5>
-                        <img src={this.state.image}></img>
+                        <img alt="" src={this.state.image}></img>
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SideCover from "../images/sideCoversSmall.jpg";
+// import SideCover from "../images/sideCoversSmall.jpg";
 import Spider from "../images/jean-philippe-delberghe-640668-unsplash.jpg"
 // import InputForm from "./InputForm"
 // // import "../materialize.js"

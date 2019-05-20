@@ -3,6 +3,7 @@ import "./Banner.css"
 import SideNavButton from "../SideNavButton"
 
 
+
 class Banner extends Component {
     render() {
         return (
@@ -10,6 +11,7 @@ class Banner extends Component {
                 
                 <div className="banner-image">
                 <SideNavButton sNav={this.props.sNav} handleSideNav={this.props.handleSideNav}/>
+                
                 {/* <div className="banner-text"></div> */}
 
                 </div>
