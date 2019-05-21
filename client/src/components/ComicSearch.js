@@ -15,11 +15,16 @@
                                         placeholder = "Enter a Character Name" />
                                 <label htmlFor="name"></label>
                                 {/* Look into onClick vs onSubmit */}
-                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} onClick = {this.props.handleFormSubmit}>Search</button>
-                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} onClick = {this.props.handleFormSubmit2}>Deadpool</button>
-                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} onClick = {this.props.handleFormSubmit3}>Spider-man</button>
-                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} onClick = {this.props.handleFormSubmit4}>Red Sonja</button>
-                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} onClick = {this.props.handleFormSubmit5}>Thanos</button>
+                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} 
+                                    onClick = {this.props.handleFormSubmit}>Search</button>
+                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} 
+                                    onClick = {this.props.handleFormSubmit2}>Deadpool</button>
+                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} 
+                                    onClick = {this.props.handleFormSubmit3}>Spider-man</button>
+                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} 
+                                    onClick = {this.props.handleFormSubmit4}>Red Sonja</button>
+                                <button className="searchButton btn grey dark-1" style={{marginLeft: "5px", marginBottom: "5px"}} 
+                                onClick = {this.props.handleFormSubmit5}>Thanos</button>
                             </div>
                         </form>
                     {/* </div> */}

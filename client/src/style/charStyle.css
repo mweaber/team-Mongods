@@ -1,0 +1,27 @@
+.charGrid{
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-gap: 10x;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+.charDisplay{
+
+
+}
+
+.charInfo{
+    margin:auto 0;
+    display: flex;
+    justify-content: space-between;
+    float:right;
+}
+
+.charImg{
+    margin:auto 0;
+    border-radius: 25px;
+    height: 500px;
+    width: 600px;
+}
