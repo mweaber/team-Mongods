@@ -29,6 +29,7 @@ class Home extends Component {
             .then(result => console.log(result.data))
             .catch(err => console.log(err))
     }
+    
     render() {
         console.log(this.props)
         return (

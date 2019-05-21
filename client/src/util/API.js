@@ -20,6 +20,9 @@ export default {
         return axios.get("/api/auth/test/what");
     },
 
+    findMyStatues(userStatues) {
+        return axios.get("/api/statueinput/statueSearch", {userStatues})
+    }
 
 
 };

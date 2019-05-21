@@ -1,19 +1,8 @@
 import React, { Component } from "react";
 import SideNavbk from "./sideCovers.jpg"
 import LoginButton from "../LoginButton";
-// import Background2 from "../../images/unsplashBack1-4k.jpg"
 import "./SideNavCSS.css"
 
-
-// const sectionStyle = {
-//     backgroundImage: `url(${Background2})`,
-//     backgroundSize: "cover"
-// }
-
-// const containerStyle = {
-//     paddingLeft: "170px",
-
-// }
 
 class SideNav extends Component {
     render() {
@@ -46,9 +35,9 @@ class SideNav extends Component {
                     <li><a className="waves-effect" href="#!">Movies</a></li>
                     <li><a className="waves-effect" href="/shop">eBay Items</a></li>
                     <div className="divider"></div>
-                    <li><a className="waves-effect" href="/characters"><center>Profile</center></a></li>
-                    <li><a className="waves-effect" href="statueinput"><center>Add Statue</center></a></li>
-                    <li><a className="waves-effect" href="#!"><center>Registered Pieces</center></a></li>
+                    {this.props.userID ? <li><a className="waves-effect" href="/profile"><center>Profile</center></a></li> : null}
+                    {this.props.userID ? <li><a className="waves-effect" href="statueinput"><center>Add Statue</center></a></li> : null}
+                    {this.props.userID ? <li><a className="waves-effect" href="#!"><center>Registered Pieces</center></a></li> : null}
                     <li><a className="waves-effect" href="/shop"><center>PO List</center></a></li>
                     <li><center><LoginButton loggedIn={this.props.loggedIn} logout={this.props.logout} userID={this.props.userID} email={this.props.email} responseGoogle={this.props.responseGoogle} /></center></li>
                     <div className="divider"></div>
