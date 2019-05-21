@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ComicSearch from "./ComicSearch"
 import comicAPI from "../util/comicAPI";
+import "../style/charStyle.css"
 // import CharacterCard from "./CharacterCard";
 
 class Characters extends Component {
@@ -160,21 +161,28 @@ class Characters extends Component {
                             handleFormSubmit3={this.handleFormSubmit3} handleFormSubmit4={this.handleFormSubmit4}
                             handleFormSubmit5={this.handleFormSubmit5} />
                     </div>
+                </div>    
 
-
-                    {/* <div className="col s12"> */}
-                    {/* Lets add the results cards down here under the search. */}
-                    {/* <p>{this.handleResults}</p> */}
+                <div className="charGrid">
+                    
+                        {/* <div className="col s12"> */}
+                        {/* Lets add the results cards down here under the search. */}
+                        {/* <p>{this.handleResults}</p> */}
+                        {/* </div> */}
+                    {/* <div className="charDisplay"> */}
+                        <img className="charImg" alt="" src={this.state.image}></img>
                     {/* </div> */}
-                    <div className="MakeSmaller col s4" >
+                    {/* <div className=" charInfo col s4" > */}
                         {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
-                        <h5>{JSON.stringify(this.state.result.deck)}</h5>
-                        <h5>{JSON.stringify(this.state.res.deck)}</h5>
-                        <img alt="" src={this.state.image}></img>
-                    </div>
+                        <h5 className="charBio">{JSON.stringify(this.state.result.deck)}</h5>
+                        <h5 className="charBio">{JSON.stringify(this.state.res.deck)}</h5>
+                    {/* </div>     */}
+                    
+                    
                 </div>
 
             </div>
+           
         );
     }
 }
