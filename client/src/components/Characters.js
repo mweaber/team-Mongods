@@ -163,7 +163,7 @@ class Characters extends Component {
                     </div>
                 </div>    
 
-                <div className="charGrid">
+                <div className="charGrid charGrid2">
                     
                         {/* <div className="col s12"> */}
                         {/* Lets add the results cards down here under the search. */}
