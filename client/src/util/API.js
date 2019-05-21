@@ -22,7 +22,9 @@ export default {
 
     findMyStatues(userStatues) {
         return axios.get("/api/statueinput/statueSearch", {userStatues})
+    },
+
+    findMyEbayItems(userItems) {
+        return axios.get("api/shop/ebayItems", {userItems})
     }
-
-
 };
