@@ -27,14 +27,14 @@ router.post("/statueAdd", checkAuth, (req, res) => {
 
 })
 
-router.get("/search/:query", (req, res) => {
-    statues.findItemsByKeywords(req.params.query)
-        .then(result => {
-            const useable = result[0];
-            const statuesResult = useable.searchResult[0].item;
-            res.json(statuesResult)
-        })
-        .catch(err => res.json(err))
+router.get("/statueSearch", (req, res) => {
+    dbStatues.find({userID: req.user._id})
+    .then(function(dbStatuesShow) {
+        res.json(dbStatuesShow)
+    })
+    .catch(function(err) {
+        res.json(err)
+    })
 })
 
 
