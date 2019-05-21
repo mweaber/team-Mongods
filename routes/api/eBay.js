@@ -45,5 +45,15 @@ router.get("/search/:query", (req, res) => {
         .catch(err => res.json(err))
 })
 
+router.get("/ebayItems", (req, res) => {
+    dbEbay.find({userID: req.user._id})
+    .then(function(dbEbaysShow) {
+        res.json(dbEbaysShow)
+    })
+    .catch(function(err) {
+        res.json(err)
+    })
+})
+
 
 module.exports = router;
