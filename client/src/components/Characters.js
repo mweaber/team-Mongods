@@ -11,6 +11,19 @@ class Characters extends Component {
         res: []
     };
 
+    componentDidMount() {
+        comicAPI.test()
+        .then(res => {
+            this.setState({
+                res: res.data.results[0],
+                image: res.data.results[0].image.small_url
+            })
+            // console.log(this.state.result.aliases)
+            // console.log(this.state.result.image.small_url)
+        })
+        .catch(err => console.log(err))
+    };
+
     handleInputChange = e => {
         //    console.log(e.target);
         const { name, value } = e.target;
