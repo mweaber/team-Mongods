@@ -29,12 +29,13 @@ class Home extends Component {
         return (
             <div>
 
-                <div className="row" style={containerStyle}>
+                <div className="row">
                     <div className="col s12 m6 l6">
 
                         <ComicCard />
                     </div>
-                    <div className="col s12 m5 l5">
+                    <div className="col s12 m6 l6">
+                    <h4 style={{paddingLeft: "11.5px"}}>Upcoming Comics & Collectibles</h4>
                         {
                             this.state.cards.map(card => (
                                 <Card
