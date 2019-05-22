@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 const sectionStyle={
-    zIndex: "1",
-    position: "absolute"
+    zIndex: "3",
+    position: "relative"
 }
 
 class SideNavButton extends Component {
@@ -11,7 +11,7 @@ class SideNavButton extends Component {
     render() {
         return (
             <div>
-                <a data-target="slide-out" className="sidenav-trigger btn" style={{sectionStyle}} onClick={this.props.handleSideNav}><i className="material-icons gray dark-1">menu</i></a>
+                <a data-target="slide-out" className="sidenav-trigger btn" style={sectionStyle} onClick={this.props.handleSideNav}><i className="material-icons gray dark-1">menu</i></a>
             </div>
         )
     }

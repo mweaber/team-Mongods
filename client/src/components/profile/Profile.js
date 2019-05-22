@@ -3,7 +3,7 @@ import API from "../../util/API";
 import StatueDisplay from "../statueDisplay/StatueDisplay";
 
 const containerStyle = {
-    paddingLeft: "170px",
+    // paddingLeft: "170px",
     backgroundColor: "white",
     border: "#4db6ac solid 1px",
     marginTop: "15px"
@@ -61,13 +61,14 @@ class Profile extends Component {
                                     notes={statue.notes}
                                     yourNum={statue.your_num}
                                     editionNum={statue.edition_num}
-                                    id={statue.id}
+                                    id={statue._id}
                                     alt={statue.collectible_name}
                                     image1={statue.image_url1}
                                     image2={statue.image_url2}
                                     image3={statue.image_url3}
                                     image4={statue.image_url4}
                                     image5={statue.image_url5}
+                                    userID={statue.userID}
                                 />
                             ))
                         }

@@ -37,5 +37,12 @@ router.get("/statueSearch", (req, res) => {
     })
 })
 
+router.get("/statuedelete/:id", (req,res) =>{
+    const id = req.params.id;
+    dbStatues.findByIdAndDelete(id)
+        .then(result => res.json(result))
+        .catch(err => res.json(err));
+})
+
 
 module.exports = router;
