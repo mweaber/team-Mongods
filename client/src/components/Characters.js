@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ComicSearch from "./ComicSearch"
 import comicAPI from "../util/comicAPI";
+import "../style/charStyle.css"
 // import CharacterCard from "./CharacterCard";
 
 class Characters extends Component {
@@ -9,6 +10,19 @@ class Characters extends Component {
         result: [],
         image: "",
         res: []
+    };
+
+    componentDidMount() {
+        comicAPI.test()
+        .then(res => {
+            this.setState({
+                res: res.data.results[0],
+                image: res.data.results[0].image.small_url
+            })
+            // console.log(this.state.result.aliases)
+            // console.log(this.state.result.image.small_url)
+        })
+        .catch(err => console.log(err))
     };
 
     handleInputChange = e => {
@@ -147,21 +161,22 @@ class Characters extends Component {
                             handleFormSubmit3={this.handleFormSubmit3} handleFormSubmit4={this.handleFormSubmit4}
                             handleFormSubmit5={this.handleFormSubmit5} />
                     </div>
+                </div>    
 
+                <div className="charGrid">
 
-                    {/* <div className="col s12"> */}
-                    {/* Lets add the results cards down here under the search. */}
-                    {/* <p>{this.handleResults}</p> */}
-                    {/* </div> */}
-                    <div className="MakeSmaller col s4" >
-                        {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
-                        <h5>{JSON.stringify(this.state.result.deck)}</h5>
-                        <h5>{JSON.stringify(this.state.res.deck)}</h5>
-                        <img alt="" src={this.state.image}></img>
+                    <div className="charDisplay">
+                        <img className="charImg" alt="" src={this.state.image}></img>
                     </div>
+                    <div className=" charInfo" >
+                        <h5 className="charBio">{JSON.stringify(this.state.result.deck)}</h5>
+                        <h5 className="charBio">{JSON.stringify(this.state.res.deck)}</h5>
+                    </div>    
+                    
                 </div>
 
             </div>
+           
         );
     }
 }

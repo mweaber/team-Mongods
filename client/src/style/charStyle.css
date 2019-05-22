@@ -1,0 +1,30 @@
+.charGrid{
+    margin: 15px;
+    display: flex;
+    width: 960px;
+    height: 700px;
+    grid-row: 650px;
+    grid-gap: 10x;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    /* border: solid black 3px; */
+    overflow: hidden;
+}
+
+.charInfo{
+    margin:auto 0;
+    display: grid;
+    justify-content: space-between;
+    /* border: solid black 1px; */
+    width: 400px;
+    height: 700px;
+    margin-left: auto;}
+
+.charImg{
+    margin:auto 0;
+    border-radius: 25px;
+    height: 700px;
+    width: 500px;
+    /* border: solid black 1px; */
+    
+}

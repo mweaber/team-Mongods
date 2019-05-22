@@ -55,6 +55,7 @@ class Card extends Component {
                                 {this.props.releaseDate ? <p>Release Date: {this.props.releaseDate}</p> : null}
                                 {this.props.producer ? <p>Producer: {this.props.producer} </p> : null }
                             </div> : null}
+
                             
                             <center><a href={this.props.link} 
                                 data-releasedate={this.props.releaseDate} 
@@ -62,6 +63,9 @@ class Card extends Component {
                                 data-name={this.props.alt}
                                 data-image={this.props.image}
                                 target="_blank" className="Waves-effect waves-light btn grey darken-1" style={{marginBottom: "5px"}} onClick={(e) => this.handleOnClick(e)}>Preorder</a></center>
+
+                           
+
                         </div>
                     </div>
               
