@@ -55,5 +55,12 @@ router.get("/ebayItems", (req, res) => {
     })
 })
 
+router.get("/recentebay", (req,res) => {
+    dbEbay.find()
+        .sort({_id: -1})
+        .then(result => res.json(result))
+        .catch(err => res.json(err))
+ })
+
 
 module.exports = router;

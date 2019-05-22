@@ -44,5 +44,11 @@ router.get("/statuedelete/:id", (req,res) =>{
         .catch(err => res.json(err));
 })
 
+router.get("/recentstatues", (req,res) => {
+    dbStatues.find()
+        .sort({_id: -1})
+        .then(result => res.json(result))
+        .catch(err => res.json(err));
+ })
 
 module.exports = router;

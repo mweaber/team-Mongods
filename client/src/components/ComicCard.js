@@ -1,8 +1,34 @@
 import React, { Component } from "react";
 // import SideCover from "../images/sideCoversSmall.jpg";
 import Spider from "../images/jean-philippe-delberghe-640668-unsplash.jpg"
+import API from "../util/API"
 
 class ComicCard extends Component {
+state= {
+    recentStatues: [],
+    recentItems: []
+}
+
+    componentDidMount() {
+        // this.checkUser();
+        // this.getUserPosts();
+        API.ebayItemsRecent().then(e => {
+            this.setState({
+                recentStatues: e.data[0]
+            })
+            console.log(e.data[0])
+            // this.setState({
+            //     userEbayItems: e.data
+            // })
+        }).catch(err => console.log(err))
+        API.statuesRecent().then(e => {
+            this.setState({
+                recentItems: e.data[0]
+            })
+            console.log(e.data[0])
+        }).catch(err => console.log(err))
+    }
+
     render() {
         return (
             <div>

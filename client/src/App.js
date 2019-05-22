@@ -11,34 +11,6 @@ import Banner from "./components/banner/Banner"
 import StatueInput from "./components/statueInput/StatueInput";
 import Profile from "./components/profile/Profile"
 
-// const protected1 = () => (
-//   <h3>This is your homepage</h3>
-// )
-// const protected2 = () => (
-//   <h2>You are not logged in</h2>
-// )
-
-// const PrivateRoute = ({ component: Component, user, ...rest }) => {
-//   return (
-//     <Route
-//       {...rest}
-//       render={(props) => user
-//         ? <Component {...props} {...rest} user={user} />
-//         : <Redirect to={{ pathname: "/home", state: { from: props.location } }} />}
-//     />
-//   )
-// }
-
-// const sectionStyle = {
-//   backgroundImage: `url(${Background2})`,
-//   backgroundSize: "cover"
-// }
-
-// const containerStyle = {
-//   paddingLeft: "170px",
-
-// }
-
 
 class App extends Component {
   constructor(props) {
@@ -66,7 +38,6 @@ class App extends Component {
       })
     })
       .catch(err => console.log(err))
-    ///// add path to call and determine whether or not i am logged in
   }
 
   handleSideNav = e => {
@@ -83,8 +54,8 @@ class App extends Component {
 
       <Router>
         <div>
-          <Banner sNav={this.state.sNav} handleSideNav={this.handleSideNav}/>
-          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/> : console.log("sidenav is false")}
+          <Banner loggedIn={this.state.loggedIn} logout={this.logout} sNav={this.state.sNav} handleSideNav={this.handleSideNav} userID={this.state.userID} email={this.state.email} photo={this.state.photo}/>
+          {this.state.sNav ? <Sidenav userID={this.state.userID} email={this.state.email} loggedIn={this.state.loggedIn} photo={this.state.photo} sNav={this.state.sNav} handleSideNav={this.handleSideNav}/> : null}
           {/* <SideNavButton sNav={this.state.sNav} handleSideNav={this.handleSideNav} */}
 
 

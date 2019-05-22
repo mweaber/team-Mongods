@@ -45,9 +45,11 @@ class Profile extends Component {
 
     render() {
         return (
-            <div><div className="container"><h4>Your Saved Statues</h4></div>
+            <div>
+                <div className="container">
+                    <h4>Your Saved Statues</h4>
+                </div>
 
-                
                 <div className="container" style={containerStyle}>
                     <div className="row">
                         {/* <div className="col s12 m4 l4"> */}
@@ -74,10 +76,23 @@ class Profile extends Component {
                         }
                         {/* </div> */}
                     </div>
+                </div>
+
+                <div className="container">
+                    <h4>Your Saved Ebay Searches</h4>
+                </div>
+                <div className="container" style={containerStyle}>
+                    <div className="row">
+
+
+
+
+
+                    </div>
 
 
                 </div>
-            </div>
+            </div >
         )
     }
 }
