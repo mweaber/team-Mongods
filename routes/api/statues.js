@@ -18,7 +18,6 @@ router.post("/statueAdd", checkAuth, (req, res) => {
   
     console.log(req.body)
   
-
     const newStatues = new dbStatues(req.body.newStatues);
     newStatues.userID = req.user._id;
     newStatues.save()
@@ -37,7 +36,7 @@ router.get("/statueSearch", (req, res) => {
     })
 })
 
-router.get("/statuedelete/:id", (req,res) =>{
+router.get("/statuedelete/:id", checkAuth, (req,res) =>{
     const id = req.params.id;
     dbStatues.findByIdAndDelete(id)
         .then(result => res.json(result))

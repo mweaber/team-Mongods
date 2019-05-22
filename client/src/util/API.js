@@ -7,13 +7,18 @@ export default {
     },
 
     saveNewEbay(newEbay) {
-        console.log("path in util api hit")
+        // console.log("path in util api hit")
         return axios.post("/api/shop/ebayAdd", {newEbay})
     },
 
     saveNewStatue(newStatues) {
-        console.log("path in util api hit")
+        // console.log("path in util api hit")
         return axios.post("/api/statueinput/statueAdd", {newStatues})
+    },
+
+    saveNewPO(newPO) {
+        console.log("util path hit")
+        return axios.post("/api/preorder/newPreorder", {newPO})
     },
 
     checkUser() {
@@ -39,5 +44,8 @@ export default {
     },
     statuesRecent() {
         return axios.get("/api/statueinput/recentstatues")
+    },
+    preordersRecent() {
+        return axios.get("/api/preorder/recentPreorders")
     }
 };

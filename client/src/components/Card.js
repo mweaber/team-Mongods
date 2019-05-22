@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../util/API";
 
 
 // const cardHeight = {
@@ -17,7 +18,27 @@ class Card extends Component {
 
     handleOnClick = e => {
         e.preventDefault();
-        console.log("friendly reminder to update")
+        const dat = e.target.dataset;
+        // console.log(dat)
+        const newPO = {
+            collectible_name: dat.name,
+            releaseDate: dat.releasedate,
+            image_url1: dat.image,
+            producer: dat.producer,
+        } 
+        console.log(newPO)
+        API.saveNewPO(newPO)
+        .then(result => {
+            console.log(result)
+        })
+        .catch(err => console.log(err))
+
+        
+        // window.location = (this.props.link)
+        window.open(
+            this.props.link,
+            "_blank"
+        )
     }
 
     render() {
@@ -34,7 +55,17 @@ class Card extends Component {
                                 {this.props.releaseDate ? <p>Release Date: {this.props.releaseDate}</p> : null}
                                 {this.props.producer ? <p>Producer: {this.props.producer} </p> : null }
                             </div> : null}
-                            {/* <center><a className="Waves-effect waves-light btn grey darken-1" style={{marginBottom: "5px"}}onClick={this.handleOnClick}>Button</a></center> */}
+
+                            
+                            <center><a href={this.props.link} 
+                                data-releasedate={this.props.releaseDate} 
+                                data-producer={this.props.producer}
+                                data-name={this.props.alt}
+                                data-image={this.props.image}
+                                target="_blank" className="Waves-effect waves-light btn grey darken-1" style={{marginBottom: "5px"}} onClick={(e) => this.handleOnClick(e)}>Preorder</a></center>
+
+                           
+
                         </div>
                     </div>
               
