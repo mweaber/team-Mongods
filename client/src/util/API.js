@@ -26,5 +26,12 @@ export default {
 
     findMyEbayItems(userItems) {
         return axios.get("api/shop/ebayItems", {userItems})
+    },
+
+    findRecentlyAdded(recentItems) {
+        return axios.get("/api/recentItems/recentStatues", {recentItems})
+    },
+    deleteStatue(id) {
+        return axios.delete(`/api/statueinput/deletestatue/${id}`)
     }
 };

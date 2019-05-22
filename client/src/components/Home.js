@@ -4,17 +4,11 @@ import ComicCard from "./ComicCard";
 import Card from "./Card"
 // import InputForm from "./InputForm"
 import Temp from "../placeholder.json"
-// import Footer from "./Footer"
-import API from "../util/API";
-import Banner from "./banner/Banner"
 
-// const sectionStyle = {
-//     backgroundImage: `url(${Background2})`,
-//     backgroundSize: "cover"
-// }
+import API from "../util/API";
 
 const containerStyle = {
-    paddingLeft: "170px",
+    paddingLeft: "0px",
 
 }
 
@@ -40,7 +34,7 @@ class Home extends Component {
 
                         <ComicCard />
                     </div>
-                    <div className="col s12 m4 l4">
+                    <div className="col s12 m5 l5">
                         {
                             this.state.cards.map(card => (
                                 <Card
@@ -48,10 +42,12 @@ class Home extends Component {
                                     id={card.id}
                                     alt={card.name}
                                     image={card.image}
+                                    releaseDate={card.releaseDate}
+                                    producer={card.producer}
+                                    link={card.link}
                                 />
                             ))
                         }
-                        {/* <SideNavButton /> */}
                     </div>
                 </div>
             </div>

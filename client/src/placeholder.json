@@ -1,23 +1,112 @@
 [
     {
         "id": 1,
-        "name": "Hulk 181",
-        "image": "./images/hulk181.jpg"
+        "name": "Hulk Maquette",
+        "image": "https://www.sideshow.com/storage/product-images/3006741/gladiator-hulk_marvel_gallery_5cc0a3058dcd1.jpg",
+        "producer": "Sideshow",
+        "releaseDate": "TBD",
+        "link": "https://www.sideshow.com/collectibles/marvel-gladiator-hulk-sideshow-collectibles-300674",
+        "type": "statue"
     },
     {
         "id": 2,
-        "name": "Spiderman First App",
-        "image": "./images/Amazing-Fantasy-15.jpg"
+        "name": "DCeased 2 Variant",
+        "image": "https://www.previewsworld.com/news_images/228095_1309024_2.jpg",
+        "producer": "DC Comics",
+        "releaseDate": "June 2019",
+        "link": null,
+        "type": "comic"
     },
     {
         "id": 3,
-        "name": "Detective Comics 1000",
-        "image": "./images/detective1kMidtown.jpg"
+        "name": "Batman Damned 3 Variant ",
+        "image": "https://cdn.shopify.com/s/files/1/2075/4529/products/STL112427_1280x1280.jpg?v=1558026805",
+        "producer": "DC Comics",
+        "releaseDate": "June 2019",
+        "link": "https://www.igcomicstore.com/collections/pre-sales/products/batman-damned-variant-issue-3",
+        "type": "comic"
     },
     {
         "id": 4,
-        "name": "DCEASED 1",
-        "image": "./images/dceased1.jpg"
+        "name": "Batman 75 Variant",
+        "image": "https://cdn.shopify.com/s/files/1/2075/4529/products/STL123222_1280x1280.jpg?v=1556031634",
+        "producer": "DC Comics",
+        "releaseDate": "July 2019",
+        "link": "https://www.igcomicstore.com/collections/pre-sales/products/batman-variant-issue-75",
+        "type": "comic"
+    },
+    {
+        "id": 5,
+        "name": "Vampirella 1",
+        "image": "https://cdn.shopify.com/s/files/1/1496/3582/products/vampirella_1_1_30_cosplay_virgin_1024x1024.jpg?v=1558051692",
+        "producer": "Dynamite Comics",
+        "releaseDate": "July 2019",
+        "link": "https://www.7ate9comics.com/collections/frontpage/products/vampirella-1-1-30-cosplay-virgin-variant-cover",
+        "type": "comic"
+    },
+    {
+        "id": 6,
+        "name": "Red Sonja 1",
+        "image": "https://cdn.shopify.com/s/files/1/1496/3582/products/red_sonja_1_gallagher_variant_1024x1024.jpg?v=1557944908",
+        "producer": "Dynamite Comics",
+        "releaseDate": "June 2019",
+        "link": "https://www.7ate9comics.com/collections/frontpage/products/red-sonja-birth-of-the-she-devil-1-john-gallagher-virgin-variant-cover-limited-to-500",
+        "type": "comic"
+    },
+    {
+        "id": 7,
+        "name": "Thor, Breaker of Brimstone",
+        "image": "https://www.sideshow.com/storage/product-images/300673/thor_marvel_gallery_5ca7826541b26.jpg",
+        "producer": "Sideshow",
+        "artist": "Daniel Bel",
+        "releaseDate": "Shipping Now",
+        "link": "https://www.sideshow.com/collectibles/marvel-thor-sideshow-collectibles-300673",
+        "type": "statue"
+    },
+    {
+        "id": 8,
+        "name": "Sabretooth",
+        "image": "https://www.sideshow.com/wp/wp-content/uploads/2019/05/1125x682_previewbanner_SabretoothPF-1.jpg",
+        "producer": "Sideshow",
+        "releaseDate": "TBD",
+        "link": "https://www.sideshow.com/whats-new/sabretooth-premium-format-figure",
+        "type": "statue"
+    },
+    {
+        "id": 10,
+        "name": "Kratos & Atreus Deluxe",
+        "image": "https://www.sideshow.com/storage/product-images/904724/kratos-atreus-deluxe_god-of-war_feature.jpg",
+        "producer": "Iron Studios",
+        "releaseDate": "September 2019",
+        "link": "https://www.sideshow.com/collectibles/god-of-war-kratos-and-atreus-deluxe-iron-studios-904724",
+        "type": "statue"
+    },
+    {
+        "id": 9,
+        "name": "Logan",
+        "image": "https://www.sideshow.com/storage/product-images/300708/logan_marvel_gallery_5cd34e4107a70.jpg",
+        "producer": "Sideshow",
+        "releaseDate": "June 2020",
+        "artist": "Daniel Bel",
+        "link": "https://www.sideshow.com/collectibles/marvel-logan-sideshow-collectibles-300708",
+        "type": "statue"
+    },
+    {
+        "id": 11,
+        "name": "Juggernaut",
+        "image": "https://www.sideshow.com/storage/product-images/300247/juggernaut_marvel_gallery_5c9167d042884.jpg",
+        "producer": "Sideshow",
+        "releaseDate": "October 2019",
+        "link": "https://www.sideshow.com/collectibles/marvel-juggernaut-sideshow-collectibles-300247",
+        "type": "statue"
+    },
+    {
+        "id": 12,
+        "name": "Venom",
+        "image": "https://www.sideshow.com/storage/product-images/300553/venom_marvel_gallery_5c4fd3dd8d6a1.jpg",
+        "producer": "Prime 1",
+        "releaseDate": "Shipping now",
+        "link": "https://www.sideshow.com/collectibles/marvel-venom-sideshow-collectibles-300553",
+        "type": "statue"
     }
 ]
-
