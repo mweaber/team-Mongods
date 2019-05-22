@@ -33,5 +33,11 @@ export default {
     },
     deleteStatue(id) {
         return axios.delete(`/api/statueinput/deletestatue/${id}`)
+    },
+    ebayItemsRecent() {
+        return axios.get("/api/shop/recentebay");
+    },
+    statuesRecent() {
+        return axios.get("/api/statueinput/recentstatues")
     }
 };

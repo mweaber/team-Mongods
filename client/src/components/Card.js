@@ -17,7 +17,7 @@ class Card extends Component {
 
     handleOnClick = e => {
         e.preventDefault();
-        console.log("eat cacks")
+        console.log("friendly reminder to update")
     }
 
     render() {
@@ -34,7 +34,7 @@ class Card extends Component {
                                 {this.props.releaseDate ? <p>Release Date: {this.props.releaseDate}</p> : null}
                                 {this.props.producer ? <p>Producer: {this.props.producer} </p> : null }
                             </div> : null}
-                            <center><a className="Waves-effect waves-light btn grey darken-1" style={{marginBottom: "5px"}}onClick={this.handleOnClick}>Eat Cacks</a></center>
+                            <center><a className="Waves-effect waves-light btn grey darken-1" style={{marginBottom: "5px"}}onClick={this.handleOnClick}>Button</a></center>
                         </div>
                     </div>
               
