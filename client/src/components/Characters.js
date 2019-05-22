@@ -163,21 +163,15 @@ class Characters extends Component {
                     </div>
                 </div>    
 
-                <div className="charGrid charGrid2">
-                    
-                        {/* <div className="col s12"> */}
-                        {/* Lets add the results cards down here under the search. */}
-                        {/* <p>{this.handleResults}</p> */}
-                        {/* </div> */}
-                    {/* <div className="charDisplay"> */}
+                <div className="charGrid">
+
+                    <div className="charDisplay">
                         <img className="charImg" alt="" src={this.state.image}></img>
-                    {/* </div> */}
-                    {/* <div className=" charInfo col s4" > */}
-                        {/* <h5>{JSON.stringify(this.state.result.count_of_issue_appearances)}</h5> */}
+                    </div>
+                    <div className=" charInfo" >
                         <h5 className="charBio">{JSON.stringify(this.state.result.deck)}</h5>
                         <h5 className="charBio">{JSON.stringify(this.state.res.deck)}</h5>
-                    {/* </div>     */}
-                    
+                    </div>    
                     
                 </div>
 

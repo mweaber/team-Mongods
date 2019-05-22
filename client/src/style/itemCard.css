@@ -3,8 +3,6 @@
     margin: 10px;
     margin-bottom:25px;
     padding: 25px;
-    /* height: fit-content;
-    width: fit-content; */
     min-width: 450px;
     min-height: 450px;
     max-width: 450px;
@@ -12,7 +10,6 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.609), rgba(0,0,0,0.809));
     box-shadow:  4px 6px  rgba(46, 139, 69, 0.596);
     border: solid black 2px;
-    /* margin: auto; */
     text-align: center;
     font-family: arial;
 }
@@ -66,29 +63,10 @@
     /* border: solid rgb(88, 32, 32) 1px; */
     margin-top: 25px;
     margin-bottom: 25px;
-    /* position: relative; */
-    /* bottom:0; */
     display: flex;
     justify-content: center;
     align-self: center;
     align-items: center;
     align-content: center;
-    /* align-content: flex-end;
-    align-self: flex-end;
-    align-items: flex-end; */
     
 }
-
-/* button{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-} */
-
-/* .saveButton{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-} */
