@@ -12,25 +12,13 @@ class RecentlyAddedStatues extends Component {
 
                     <div className="card">
                         <div className="card-image">
-                            {this.props.rs.image_url1 ? <img src={this.props.rs.image_url1} alt="sides of comics" /> : null }
-        {this.props.rs.collectible_name ? <span className="card-title">{this.props.rs.collectible_name}</span> : <p>Oops! It looks like no one has used this app before!  You could be the first!</p> }
+                            {this.props.rs ? <img src={this.props.rs.image_url1} alt="Last added item!" /> : null }
+        {this.props.rs ? <span className="card-title">{this.props.rs.collectible_name}</span> : <p>Oops! It looks like no one has used this app before!  You could be the first!</p> }
 
                         </div>
 
 
                     </div>
-                    
-                    {/* <div className="card">
-                        <div className="card-image">
-                            <img src={this.props.rm.image_url1} alt="sides of comics" />
-                            <span className="card-title">{this.props.rm.collectible_name}</span>
-
-                        </div>
-
-
-                    </div> */}
-
-
 
                 </div>
             </div>
