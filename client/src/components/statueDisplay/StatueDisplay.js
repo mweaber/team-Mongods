@@ -9,7 +9,7 @@ const sectionStyle= {
 class StatueDisplay extends Component {
    
     render() {
-        console.log(this.props.id)
+        // console.log(this.props.id)
         return (
             <div>
                 <div className="col m4 l4" style={sectionStyle}>
