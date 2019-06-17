@@ -30,14 +30,14 @@ class ComicCard extends Component {
             this.setState({
                 recentStatues: e.data[0]
             })
-            console.log(e.data[0].image_url1)
+            // console.log(e.data[0].image_url1)
         }).catch(err => console.log(err))
         API.preordersRecent().then(e => {
             this.setState({
                 megaItems: e.data[0]
             })
-            console.log(this.state.megaItems.collectible_name)
-            console.log(this.state.megaItems.image_url1)
+            // console.log(this.state.megaItems.collectible_name)
+            // console.log(this.state.megaItems.image_url1)
 
         }).catch(err => console.log(err))
     }
