@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import SideCover from "../images/sideCoversSmall.jpg";
-import Spider from "../images/jean-philippe-delberghe-640668-unsplash.jpg"
 import API from "../util/API"
 import RecentlyAddedStatues from "./recentlyAdded/RecentlyAdded"
 import RecentlyAddedOrders from "./recentlyAdded/ReccentlyAddedOrders"

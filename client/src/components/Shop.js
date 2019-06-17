@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar"
 import API from "../util/API";
 import ItemCard from "./ItemCard";
-import Background2 from "../images/unsplashBack1-4k.jpg"
 import "../style/shopGrids.css"
 
 
